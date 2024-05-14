@@ -1,0 +1,41 @@
+import React from 'react';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {OtpInput} from 'react-native-otp-entry/dist/OtpInput/OtpInput';
+const CustomOtpInput = () => {
+  return (
+    <OtpInput
+      numberOfDigits={6}
+      //   focusColor="green"
+      focusStickBlinkingDuration={500}
+      //   onTextChange={text => console.log(text)}
+      onFilled={text => console.log(`OTP is ${text}`)}
+      textInputProps={{
+        accessibilityLabel: 'One-Time Password',
+      }}
+      theme={{
+        // containerStyle: styles.pinContainer,
+        pinCodeContainerStyle: styles.pinCodeContainer,
+        pinCodeTextStyle: styles.pinCodeText,
+        // focusStickStyle: styles.focusStick,
+        focusedPinCodeContainerStyle: styles.activePinCodeContainer,
+      }}
+    />
+  );
+};
+const styles = StyleSheet.create({
+  activePinCodeContainer: {
+    borderColor: '#007236',
+    borderWidth: 1.5,
+  },
+  pinCodeText: {
+    color: '#1C2437',
+  },
+  pinCodeContainer: {
+    marginVertical: 20,
+    borderColor: '#ffff',
+    backgroundColor: '#fff',
+    elevation: 2,
+    borderRadius: 10,
+  },
+});
+export default CustomOtpInput;
