@@ -28,6 +28,7 @@ function BottomTaps() {
         name="home"
         component={Home}
         options={{
+          // headerShown: false,
           tabBarLabel:'Home',
           tabBarLabelStyle: styles.tabBarLabel, 
           tabBarIcon: ({focused, color}) =>

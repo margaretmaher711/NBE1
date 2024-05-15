@@ -11,7 +11,7 @@ const LoginButtonOrganism = () => {
     <View style={styles.loginContainer}>
       <CustomButton
         title="Log in"
-        onPressButton={() => navigation.navigate('bottomtaps')}
+        onPressButton={() => navigation.navigate('home')}
       />
       <View style={{width: 25}} />
       <Image source={require(fingerPrint)}></Image>

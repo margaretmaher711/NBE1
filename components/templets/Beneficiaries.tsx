@@ -11,9 +11,11 @@ import HomeAppBar from '../organism/HomeAppBar';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 function BeneficiariesTemplet(): React.JSX.Element {
-  const [isGrid, setGrid] = useState(true);
+  const [isGrid, setGrid] = useState(false);
   const img1 = require('../../assets/halaImg.png');
   const img2 = require('../../assets/aymanImg.png');
+  const phoneIcon = require('../../assets/callicon.png');
+  const dollarIcon = require('../../assets/dolarsign.png');
 
   const sendMoneyCards: ArrayLike<sendMoneyList> = [
     {
@@ -100,6 +102,7 @@ function BeneficiariesTemplet(): React.JSX.Element {
       </View>
       {isGrid ? (
         <FlatList
+          showsVerticalScrollIndicator={false}
           data={sendMoneyCards}
           renderItem={itemData => {
             const imgName = itemData.item.image;
@@ -127,6 +130,7 @@ function BeneficiariesTemplet(): React.JSX.Element {
         />
       ) : (
         <FlatList
+          showsVerticalScrollIndicator={false}
           data={sendMoneyCards}
           renderItem={itemData => {
             const imgName = itemData.item.image;
@@ -140,10 +144,20 @@ function BeneficiariesTemplet(): React.JSX.Element {
                     style={styles.logoListImage}></Image>
                   <View>
                     <Text style={styles.nameText}>{itemData.item.name}</Text>
-                    <Text style={styles.greyText}>
-                      {itemData.item.phoneNum}
-                    </Text>
-                    <Text style={styles.greyText}>{itemData.item.amount}</Text>
+
+                    <View style={styles.rowContainerData}>
+                      <Image source={phoneIcon}></Image>
+                      <Text style={styles.greyText}>
+                        {itemData.item.phoneNum}
+                      </Text>
+                    </View>
+                    <View style={styles.rowContainerData}>
+                      <Image source={dollarIcon}></Image>
+
+                      <Text style={styles.greyText}>
+                        {itemData.item.amount}
+                      </Text>
+                    </View>
                   </View>
                 </View>
                 <View style={{height: 20}}></View>
@@ -248,6 +262,11 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     lineHeight: 16.41,
     color: '#1C2437',
+  },
+  rowContainerData: {
+    flexDirection: 'row',
+    gap: 5,
+    alignItems: 'center',
   },
   greyText: {
     fontSize: 12,
