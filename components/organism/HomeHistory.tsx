@@ -52,7 +52,7 @@ const HomeHistory = () => {
         }}
         renderItem={itemData => {
           const imgName = itemData.item.image;
-          console.log('imgName', imgName);
+          // console.log('imgName', imgName);
 
           return (
             <>

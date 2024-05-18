@@ -20,7 +20,7 @@ function MainTabs() {
         height: 85,
       }}>
       <Tab.Screen
-        name="home"
+        name="homescreen"
         component={HomeStack}
         options={{
           tabBarLabel: 'Home',
@@ -84,7 +84,7 @@ function MainTabs() {
       />
       <Tab.Screen
         name="ATMs"
-        component={HomeStack}
+        component={Beneficiaries}
         options={{
           tabBarLabel: 'ATMs',
           tabBarIcon: ({focused}) =>
@@ -105,7 +105,7 @@ function MainTabs() {
       />
       <Tab.Screen
         name="Air Pay"
-        component={HomeStack}
+        component={Beneficiaries}
         options={{
           tabBarLabel: 'Air Pay',
           tabBarIcon: ({focused}) =>

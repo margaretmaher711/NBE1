@@ -1,5 +1,6 @@
 import React from 'react';
 import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
+import HomeTitle from '../atoms/HomeTitle';
 
 const HomeSendMoney = () => {
   const img1 = require('../../assets/halaImg.png');
@@ -14,7 +15,7 @@ const HomeSendMoney = () => {
 
   return (
     <View style={styles.sendMoneyContainer}>
-      <Text style={styles.title}>Send money</Text>
+      <HomeTitle title={'Send money'} />
       <FlatList
         horizontal={true}
         showsHorizontalScrollIndicator={false}

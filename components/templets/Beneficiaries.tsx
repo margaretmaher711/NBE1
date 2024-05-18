@@ -10,7 +10,7 @@ import {
 import HomeAppBar from '../organism/HomeAppBar';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-function BeneficiariesTemplet(): React.JSX.Element {
+function BeneficiariesTemplet({navigation}): React.JSX.Element {
   const [isGrid, setGrid] = useState(false);
   const img1 = require('../../assets/halaImg.png');
   const img2 = require('../../assets/aymanImg.png');
@@ -70,7 +70,7 @@ function BeneficiariesTemplet(): React.JSX.Element {
   }
   return (
     <>
-      <HomeAppBar />
+      <HomeAppBar navigation={navigation} />
       <View style={styles.homeTitles}>
         <Text style={styles.title}>Beneficiaries</Text>
         <View style={styles.content}>

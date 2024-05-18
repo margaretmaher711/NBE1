@@ -8,16 +8,16 @@ import {
   View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {CustomDrawerContent} from '../molecules/Drawer';
+import DrawerComponent, {CustomDrawerContent} from '../molecules/CustomDrawerContent';
+import {DrawerActions} from '@react-navigation/native';
 
-const HomeAppBar = () => {
+const HomeAppBar = ({navigation}) => {
   const userProf = require('../../assets/userprof.png');
 
   return (
     <View style={styles.contant}>
       <View style={styles.menuContainer}>
-        {/* <CustomDrawerContent /> */}
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
           <Icon name={'menu'} size={33} style={styles.menuStyle} />
         </TouchableOpacity>
         <Image source={userProf} style={styles.userProf}></Image>

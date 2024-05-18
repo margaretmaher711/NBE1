@@ -6,12 +6,11 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 
 const Tab = createMaterialBottomTabNavigator();
 
-function Home(): React.JSX.Element {
+function Home({navigation}): React.JSX.Element {
   return (
    
     <SafeAreaView style={styles.contant}>
-      {/* <Text>gdfsdf</Text> */}
-      <HomeTemplet />
+      <HomeTemplet navigation={navigation} />
     </SafeAreaView>
   );
 }

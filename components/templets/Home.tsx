@@ -1,42 +1,22 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
 import BalanceCard from '../molecules/BalanceCard';
 import HomeAppBar from '../organism/HomeAppBar';
 import HomeCards from '../organism/HomeCards';
 import HomeHistory from '../organism/HomeHistory';
 import HomeSendMoney from '../organism/HomeSendMoney';
-import {useNavigation} from '@react-navigation/native';
-import {Text} from 'react-native-paper';
+import {HoomeDrawer} from '../organism/HomeDrawer';
 
-function HomeTemplet(): React.JSX.Element {
-  const navigation = useNavigation();
-
+function HomeTemplet({navigation}): React.JSX.Element {
   return (
     <>
-      <HomeAppBar />
+    {/* <HoomeDrawer /> */}
+      <HomeAppBar navigation={navigation} />
       <BalanceCard balanceVal={'$2,374,654.25'} />
-      <HomeCards  />
+      <HomeCards />
       <HomeSendMoney />
       <HomeHistory />
     </>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    marginHorizontal: 16,
-    marginTop: 15,
-    flex: 1,
-    backgroundColor: 'transparent',
-    textAlign: 'center',
-  },
-  upperCont: {flex: 5},
 
-  lowerCont: {
-    flexDirection: 'row',
-    flex: 0.5,
-    marginBottom: 10,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-});
 export default HomeTemplet;

@@ -17,6 +17,7 @@ function SetPass(): React.JSX.Element {
   const [isNumber, setIsNumber] = useState(false);
   const [isMinimumLength, setIsMinimumLength] = useState(false);
   const [isValidInput, setIsValidInput] = useState(false);
+  const [isMatchedInputs, setMatchedInputs] = useState(false);
 
   const validateInput = (inputText: string) => {
     // Example validation rule: input should not be empty
@@ -40,7 +41,13 @@ function SetPass(): React.JSX.Element {
     setIsNumber(hasNumber);
     setIsMinimumLength(hasMinimumLength);
     setIsValidInput(isValidInput);
-    console.log('passValue', passValue);
+  };
+  const validateConfirmInput = (inputText: string) => {
+    if (inputText === passValue) {
+      setMatchedInputs(true);
+    } else {
+      setMatchedInputs(false);
+    }
   };
   return (
     <SafeAreaView style={styles.contant}>
@@ -62,7 +69,7 @@ function SetPass(): React.JSX.Element {
           <WhiteFillFeild
             prefixIcon={passIcon}
             placeholder={'Confirm Password'}
-            // validateInput={() => validateInput()}
+            validateInput={validateConfirmInput}
             // text={''}
           />
         </View>
@@ -90,16 +97,18 @@ function SetPass(): React.JSX.Element {
           </View>
         </View>
       </View>
-      <View style={styles.lowerCont}>
-        <View style={styles.loginContainer}>
-          <CustomButton
-            title="Submit"
-            onPressButton={() =>
-              isValidInput ? navigation.navigate('bottomtaps') : null
-            }
-          />
+      {isMatchedInputs && isValidInput ? (
+        <View style={styles.lowerCont}>
+          <View style={styles.loginContainer}>
+            <CustomButton
+              title="Submit"
+              onPressButton={() => navigation.navigate('finishsignup')}
+            />
+          </View>
         </View>
-      </View>
+      ) : (
+        <View></View>
+      )}
     </SafeAreaView>
   );
 }

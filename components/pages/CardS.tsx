@@ -3,10 +3,10 @@ import {SafeAreaView, StyleSheet} from 'react-native';
 
 import CardsTemplet from '../templets/Card';
 
-function Cards(): React.JSX.Element {
+function Cards({navigation}): React.JSX.Element {
   return (
     <SafeAreaView style={styles.contant}>
-      <CardsTemplet />
+      <CardsTemplet navigation={navigation} />
     </SafeAreaView>
   );
 }

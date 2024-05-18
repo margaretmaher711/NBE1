@@ -4,12 +4,11 @@ import BalanceCard from '../molecules/BalanceCard';
 import HomeAppBar from '../organism/HomeAppBar';
 import CardHistory from '../organism/CardsHistory';
 import CreditCard from '../organism/CreditCard';
-function CardsTemplet(): React.JSX.Element {
-  const lockIcon = 'lock-closed-outline';
+function CardsTemplet({navigation}): React.JSX.Element {
 
   return (
     <>
-      <HomeAppBar />
+      <HomeAppBar navigation={navigation} />
       <CreditCard />
       <CardHistory />
     </>

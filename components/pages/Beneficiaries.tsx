@@ -3,10 +3,10 @@ import {SafeAreaView, StyleSheet} from 'react-native';
 
 import BeneficiariesTemplet from '../templets/Beneficiaries';
 
-function Beneficiaries(): React.JSX.Element {
+function Beneficiaries({navigation}): React.JSX.Element {
   return (
     <SafeAreaView style={styles.contant}>
-      <BeneficiariesTemplet />
+      <BeneficiariesTemplet navigation={navigation} />
     </SafeAreaView>
   );
 }
