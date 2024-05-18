@@ -6,16 +6,16 @@ import HomeCards from '../organism/HomeCards';
 import HomeHistory from '../organism/HomeHistory';
 import HomeSendMoney from '../organism/HomeSendMoney';
 import {useNavigation} from '@react-navigation/native';
+import {Text} from 'react-native-paper';
 
 function HomeTemplet(): React.JSX.Element {
-  const lockIcon = 'lock-closed-outline';
   const navigation = useNavigation();
 
   return (
     <>
       <HomeAppBar />
       <BalanceCard balanceVal={'$2,374,654.25'} />
-      <HomeCards onPressCard={() => navigation.navigate('cards')} />
+      <HomeCards  />
       <HomeSendMoney />
       <HomeHistory />
     </>

@@ -1,17 +1,26 @@
 import React from 'react';
-import {Image, StyleSheet, Text, Touchable, TouchableOpacity, View} from 'react-native';
+import {
+  Image,
+  StyleSheet,
+  Text,
+  Touchable,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {CustomDrawerContent} from '../molecules/Drawer';
 
 const HomeAppBar = () => {
-  const userProf = '../../assets/userprof.png';
+  const userProf = require('../../assets/userprof.png');
 
   return (
     <View style={styles.contant}>
       <View style={styles.menuContainer}>
-        <TouchableOpacity >
+        {/* <CustomDrawerContent /> */}
+        <TouchableOpacity>
           <Icon name={'menu'} size={33} style={styles.menuStyle} />
         </TouchableOpacity>
-        <Image source={require(userProf)} style={styles.userProf}></Image>
+        <Image source={userProf} style={styles.userProf}></Image>
         <View>
           <Text style={styles.goodMorningMsg}>Good Morning</Text>
           <Text style={styles.userNameMsg}>Ahmed</Text>

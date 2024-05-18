@@ -1,26 +1,23 @@
 import ShowCard from '../atoms/ShowCard';
-import {useNavigation} from '@react-navigation/native';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-import Cards from '../pages/CardS';
-import FinishSignup from '../pages/FinishSignup';
 
 interface Props {
   backgrounC: string;
   title: string;
   cardImg: any;
+  onPressButton: Function | any;
+
 }
 
 const HomeNamedCard: React.FC<Props> = ({
   backgrounC = '#00C974',
   cardImg,
   title,
+  onPressButton
 }) => {
-  const navigation = useNavigation();
-  const Tab = createMaterialBottomTabNavigator();
 
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('login')}>
+    <TouchableOpacity onPress={() => onPressButton()}>
       <View style={styles.contant}>
         <ShowCard backgrounC={backgrounC} cardImg={cardImg} />
         <Text style={styles.textSty}>{title}</Text>

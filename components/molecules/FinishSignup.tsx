@@ -1,25 +1,20 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
-// import {IoIosArrowBack} from 'react-icons/io';
-// import Icon from 'react-native-vector-icons/FontAwesome';
-import Icon from 'react-native-vector-icons/Ionicons';
 
-import {TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-const appLogoImage = '../../assets/logo-login.png';
-const bankNameImage = '../../assets/bank-login.png';
 
-const FinishSignupAppBar = () => {
+const FinishSignupAppBar = ({
+  bankNameImage = require('../../assets/bank-login.png'),
+  appLogoImage = require('../../assets/logo-login.png'),
+}) => {
   const navigation = useNavigation();
 
   return (
     <View style={styles.appBar}>
       <View style={{flexDirection: 'row'}}>
-        <Image
-          source={require(bankNameImage)}
-          style={styles.bankLogoImage}></Image>
+        <Image source={bankNameImage} style={styles.bankLogoImage}></Image>
         <View style={{width: 15}}></View>
-        <Image source={require(appLogoImage)} style={styles.logoImage}></Image>
+        <Image source={appLogoImage} style={styles.logoImage}></Image>
       </View>
       <View style={{height: 80}} />
     </View>

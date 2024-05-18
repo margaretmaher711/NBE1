@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {SafeAreaView, StyleSheet, Text} from 'react-native';
 
 import HomeTemplet from '../templets/Home';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
@@ -8,7 +8,9 @@ const Tab = createMaterialBottomTabNavigator();
 
 function Home(): React.JSX.Element {
   return (
+   
     <SafeAreaView style={styles.contant}>
+      {/* <Text>gdfsdf</Text> */}
       <HomeTemplet />
     </SafeAreaView>
   );

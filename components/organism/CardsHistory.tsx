@@ -31,6 +31,8 @@ const CardHistory = () => {
       image: img3,
     },
     {name: 'Hala', amount: '$5140.00', date: '15-12-2021', id: '', image: img1},
+    {name: 'Hala', amount: '$5140.00', date: '15-12-2021', id: '', image: img1},
+    {name: 'Hala', amount: '$5140.00', date: '15-12-2021', id: '', image: img1},
   ];
   interface historyList {
     name: string;
@@ -66,8 +68,6 @@ const CardHistory = () => {
                 <Text style={styles.amountSty}>{itemData.item.amount}</Text>
               </View>
               <Divider />
-
-              <View style={{width: 20}}></View>
             </>
           );
         }}
