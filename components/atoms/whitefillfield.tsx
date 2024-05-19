@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, TextInput, View} from 'react-native';
+import {KeyboardTypeOptions, StyleSheet, TextInput, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const WhiteFillFeild: React.FC<{
@@ -7,7 +7,8 @@ const WhiteFillFeild: React.FC<{
   placeholder: string;
   validateInput: Function;
   text: string;
-}> = ({placeholder, prefixIcon, text, validateInput}) => {
+  keyboardType: KeyboardTypeOptions;
+}> = ({placeholder, prefixIcon, text, validateInput, keyboardType}) => {
   console.log('prefixIcon', typeof prefixIcon);
 
   return (
@@ -18,7 +19,8 @@ const WhiteFillFeild: React.FC<{
         placeholder={placeholder}
         underlineColorAndroid="transparent"
         placeholderTextColor="#007236"
-        onChangeText={(e) => validateInput(e)}
+        onChangeText={e => validateInput(e)}
+        keyboardType={keyboardType}
         value={text}
       />
     </View>

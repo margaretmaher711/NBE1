@@ -29,6 +29,7 @@ export function CustomDrawerContent(props) {
         />
         <CustomContainer title={'AR'} />
       </View>
+      
       <DrawerItemList {...props} />
       <View
         style={{
@@ -56,7 +57,12 @@ export function CustomDrawerContent(props) {
           gap: 18,
           alignItems: 'center',
         }}>
-        <Icon name="power" size={20} color="#000" style={{paddingLeft: 24}} />
+        <Icon
+          name="power"
+          size={20}
+          color="#000"
+          style={{paddingLeft: 24, color: '#EB001B'}}
+        />
         <Text style={[styles.drawerLabelStyle, {color: '#EB001B'}]}>
           Log Out
         </Text>

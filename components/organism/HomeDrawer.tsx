@@ -11,7 +11,7 @@ const Drawer = createDrawerNavigator();
 export function HoomeDrawer() {
   return (
     <Drawer.Navigator
-      initialRouteName="Account Summary"
+      initialRouteName="Home"
       screenOptions={{
         headerShown: false,
 
@@ -24,8 +24,15 @@ export function HoomeDrawer() {
       }}
       drawerContent={props => <CustomDrawerContent {...props} />}>
       <Drawer.Screen
-        name="Account Summary"
+        name="Home"
         component={MainTabs}
+        options={{
+          drawerItemStyle: {display: 'none'},
+        }}
+      />
+      <Drawer.Screen
+        name="Account Summary"
+        component={Beneficiaries}
         options={{
           drawerLabel: 'Account Summary',
           drawerIcon: ({focused, size}) => (
