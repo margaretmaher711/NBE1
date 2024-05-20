@@ -1,19 +1,16 @@
 import React from 'react';
-import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
-import {Divider} from '@rneui/base/dist/Divider/Divider';
-import CardTitle from '../atoms/CardsTitles';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import AddButton from '../molecules/AddButton';
 
-const EmptyBeneficiaries = () => {
+const EmptyScreen = ({title, subTitle, img, addBeneficiary=false}) => {
   return (
     <View style={styles.emptyContainer}>
-      <Image source={require('../../assets/NoBeneficiaries.png')}></Image>
-
-      <Text style={styles.modalTitleText}>No Beneficiaries</Text>
-      <Text style={styles.modalText}>
-        You don’t have beneficiaries, add some so you can send money
-      </Text>
-      <AddButton textColor={'#fff'} backColor={'#007236'} />
+      <Image source={img}></Image>
+      <Text style={styles.modalTitleText}>{title}</Text>
+      <Text style={styles.modalText}>{subTitle}</Text>
+      {addBeneficiary && (
+        <AddButton textColor={'#fff'} backColor={'#007236'} />
+      )}
     </View>
   );
 };
@@ -40,4 +37,4 @@ const styles = StyleSheet.create({
     color: '#34343F',
   },
 });
-export default EmptyBeneficiaries;
+export default EmptyScreen;

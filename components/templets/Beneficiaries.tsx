@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 import HomeAppBar from '../organism/HomeAppBar';
-import EmptyBeneficiaries from '../organism/EmptyBeneficiaries';
+import EmptyBeneficiaries from '../organism/EmptyScreen';
 import GridBeneficiaries from '../organism/GridBeneficiaries';
 import ListBeneficiaries from '../organism/ListBeneficiaries';
 import SecBenefAppBar from '../organism/SecBenefAppBar';
@@ -20,14 +20,14 @@ function BeneficiariesTemplet({navigation}): React.JSX.Element {
       amount: '$802,828.61',
     },
     {
-      name: 'Jasmine Robert',
+      name: 'Ahmad Sami',
       id: '',
       image: img2,
       phoneNum: '+20 123 456 7890',
       amount: '$802,828.61',
     },
     {
-      name: 'Jasmine Robert',
+      name: 'Mike Spectre',
       id: '',
       image: img1,
       phoneNum: '+20 123 456 7890',
@@ -65,13 +65,24 @@ function BeneficiariesTemplet({navigation}): React.JSX.Element {
   return (
     <>
       <HomeAppBar navigation={navigation} />
-      <SecBenefAppBar isGrid={isGrid} setGrid={setGrid}/>
-      {sendMoneyCards.length == 0 && <EmptyBeneficiaries />}
-      {isGrid ? (
-        <GridBeneficiaries sendMoneyCards={sendMoneyCards} />
-      ) : (
-        <ListBeneficiaries sendMoneyCards={sendMoneyCards} />
+      <SecBenefAppBar isGrid={isGrid} setGrid={setGrid} />
+      {sendMoneyCards.length == 0 && (
+        <EmptyBeneficiaries
+          title={'No Beneficiaries'}
+          subTitle={
+            'You don’t have beneficiaries, add some so you can send money'
+          }
+          img={require('../../assets/NoBeneficiaries.png')}
+          addBeneficiary={true}
+
+        />
       )}
+      {sendMoneyCards.length !== 0 &&
+        (isGrid ? (
+          <GridBeneficiaries sendMoneyCards={sendMoneyCards} />
+        ) : (
+          <ListBeneficiaries sendMoneyCards={sendMoneyCards} />
+        ))}
     </>
   );
 }

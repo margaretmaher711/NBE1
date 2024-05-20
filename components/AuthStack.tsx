@@ -11,6 +11,7 @@ import Beneficiaries from './pages/Beneficiaries';
 import Home from './pages/Home';
 import OtpTransfer from './pages/OtpTransfer';
 import AddBeneficiaries from './pages/AddBeneficiaries';
+import BeneficiariesHistory from './pages/BeneficiariesHistory';
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,7 @@ export function HomeStack() {
       <Stack.Screen name="transfer" component={Transfer} />
       <Stack.Screen name="beneficiaries" component={Beneficiaries} />
       <Stack.Screen name="addBeneficiaries" component={AddBeneficiaries} />
+      <Stack.Screen name="beneficiariesHistory" component={BeneficiariesHistory} />
       <Stack.Screen name="otpTransfer" component={OtpTransfer} />
     </Stack.Navigator>
   );

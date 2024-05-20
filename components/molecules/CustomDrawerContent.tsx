@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   sendMoneyCardList: {
-    elevation: 5,
+    elevation: 4,
     shadowRadius: 18,
     flexDirection: 'row',
     height: 86,

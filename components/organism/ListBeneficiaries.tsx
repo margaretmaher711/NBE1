@@ -1,9 +1,12 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import BeneficiaryListItem from '../molecules/BeneficiaryListItem';
 
 const ListBeneficiaries = ({sendMoneyCards}) => {
-  const phoneIcon = require('../../assets/callicon.png');
-  const dollarIcon = require('../../assets/dolarsign.png');
+  const navigation = useNavigation();
+
   return (
     <>
       <FlatList
@@ -11,30 +14,12 @@ const ListBeneficiaries = ({sendMoneyCards}) => {
         showsVerticalScrollIndicator={false}
         data={sendMoneyCards}
         renderItem={itemData => {
-          const imgName = itemData.item.image;
-          console.log('imgName', imgName);
-
           return (
             <>
-              <View style={styles.sendMoneyCardList}>
-                <Image
-                  source={itemData.item.image}
-                  style={styles.logoListImage}
-                />
-                <View>
-                  <Text style={styles.nameText}>{itemData.item.name}</Text>
-                  <View style={styles.rowContainerData}>
-                    <Image source={phoneIcon} />
-                    <Text style={styles.greyText}>
-                      {itemData.item.phoneNum}
-                    </Text>
-                  </View>
-                  <View style={styles.rowContainerData}>
-                    <Image source={dollarIcon} />
-                    <Text style={styles.greyText}>{itemData.item.amount}</Text>
-                  </View>
-                </View>
-              </View>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('beneficiariesHistory',itemData.item)}>
+                <BeneficiaryListItem item={itemData.item} />
+              </TouchableOpacity>
               <View style={{height: 20}}></View>
             </>
           );
@@ -46,41 +31,5 @@ const ListBeneficiaries = ({sendMoneyCards}) => {
     </>
   );
 };
-const styles = StyleSheet.create({
-  greyText: {
-    fontSize: 12,
-    fontWeight: '400',
-    color: '#B7B7B7',
-    lineHeight: 16.41,
-  },
-  nameText: {
-    fontSize: 14,
-    fontWeight: '700',
-    lineHeight: 16.41,
-    color: '#1C2437',
-  },
-  rowContainerData: {
-    flexDirection: 'row',
-    gap: 5,
-    alignItems: 'center',
-  },
-  sendMoneyCardList: {
-    elevation: 5,
-    shadowRadius: 18,
-    flexDirection: 'row',
-    height: 86,
-    // width: 78,
-    backgroundColor: '#fff',
-    borderRadius: 18,
-    padding: 15,
-    // justifyContent:'center',
-    alignItems: 'center',
-  },
-  logoListImage: {
-    width: 60,
-    height: 60,
-    marginRight: 10,
-    resizeMode: 'contain',
-  },
-});
+
 export default ListBeneficiaries;

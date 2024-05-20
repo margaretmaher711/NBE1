@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   langContainer: {
     width: 42,
     height: 40,
-    elevation: 5,
+    elevation: 4,
     backgroundColor: '#fff',
     borderRadius: 10,
     justifyContent: 'center',

@@ -14,6 +14,7 @@ import CardTitle from '../atoms/CardsTitles';
 import {useNavigation} from '@react-navigation/native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import WhiteFillFeild from '../atoms/whitefillfield';
+import DropDown from '../molecules/CustomDropDown';
 
 function Transfer() {
   const navigation = useNavigation();
@@ -55,48 +56,36 @@ function Transfer() {
 
   const renderForm = () => (
     <>
-      <View style={[styles.dropdownContainer, {zIndex: 3000}]}>
-        <Text style={styles.dropdownLabel}>Type of transfer</Text>
-        <DropDownPicker
-          open={openType}
-          value={valueType}
-          items={itemsType}
-          setOpen={setOpenType}
-          setValue={setValueType}
-          setItems={setItemsType}
-          style={styles.dropdown}
-          dropDownStyle={styles.dropdown}
-        />
-      </View>
-
-      <View style={[styles.dropdownContainer, {zIndex: 2000}]}>
-        <Text style={styles.dropdownLabel}>Transfer from</Text>
-        <DropDownPicker
-          open={openTransferTo1}
-          value={valueTransferTo1}
-          items={itemsTransferTo1}
-          setOpen={setOpenTransferTo1}
-          setValue={setValueTransferTo1}
-          setItems={setItemsTransferTo1}
-          style={styles.dropdown}
-          dropDownStyle={styles.dropdown}
-          labelStyle={styles.dropdownLabel}
-        />
-      </View>
-
-      <View style={[styles.dropdownContainer, {zIndex: 1000}]}>
-        <Text style={styles.dropdownLabel}>Transfer to</Text>
-        <DropDownPicker
-          open={openTransferTo2}
-          value={valueTransferTo2}
-          items={itemsTransferTo2}
-          setOpen={setOpenTransferTo2}
-          setValue={setValueTransferTo2}
-          setItems={setItemsTransferTo2}
-          style={styles.dropdown}
-          dropDownStyle={styles.dropdown}
-        />
-      </View>
+      <DropDown
+        openType={openType}
+        valueType={valueType}
+        itemsType={itemsType}
+        setOpenType={setOpenType}
+        setValueType={setValueType}
+        setItemsType={setItemsType}
+        title={'Type of transfer'}
+        zIndex={3000}
+      />
+      <DropDown
+        openType={openTransferTo1}
+        valueType={valueTransferTo1}
+        itemsType={itemsTransferTo1}
+        setOpenType={setOpenTransferTo1}
+        setValueType={setValueTransferTo1}
+        setItemsType={setItemsTransferTo1}
+        title={'Type from'}
+        zIndex={2000}
+      />
+      <DropDown
+        title={'Transfer to'}
+        openType={openTransferTo2}
+        valueType={valueTransferTo2}
+        itemsType={itemsTransferTo2}
+        setOpenType={setOpenTransferTo2}
+        setValueType={setValueTransferTo2}
+        setItemsType={setItemsTransferTo2}
+        zIndex={1000}
+      />
       <WhiteFillFeild
         placeholder={'Amount to transfer'}
         validateInput={amountValidation}
@@ -117,7 +106,7 @@ function Transfer() {
           <SignupAppBarOrganism />
           <CardTitle title="Transfer" />
           <FlatList
-            data={[{key: 'form'}]} // FlatList requires a data prop, even for a single item
+            data={[{key: 'form'}]}
             renderItem={renderForm}
             showsVerticalScrollIndicator={false}
             contentContainerStyle={styles.flatListContent}

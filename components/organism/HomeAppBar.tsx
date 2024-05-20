@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     padding: 10,
     width: 45,
     height: 45,
-    elevation: 5,
+    elevation: 4,
   },
   goodMorningMsg: {
     color: '#000',

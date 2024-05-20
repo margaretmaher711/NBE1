@@ -14,7 +14,6 @@ export function HoomeDrawer() {
       initialRouteName="Home"
       screenOptions={{
         headerShown: false,
-
         drawerStyle: styles.drawerStyle,
         drawerLabelStyle: styles.drawerLabelStyle,
         drawerActiveTintColor: '#fff',
@@ -142,7 +141,7 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   sendMoneyCardList: {
-    elevation: 5,
+    elevation: 4,
     shadowRadius: 18,
     flexDirection: 'row',
     height: 86,
