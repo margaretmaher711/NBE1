@@ -21,83 +21,79 @@ export function CustomDrawerContent(props) {
   const appLogoImage = require('../../assets/app-icon.png');
   const userProf = require('../../assets/userprof.png');
   return (
-    <DrawerContentScrollView {...props}>
-      <View style={styles.appBar}>
-        <FinishSignupAppBar
-          bankNameImage={bankNameImage}
-          appLogoImage={appLogoImage}
-        />
-        <CustomContainer title={'AR'} />
+    <DrawerContentScrollView
+      {...props}
+      style={styles.drawerContent}
+      contentContainerStyle={styles.contentContainer}>
+      <View>
+        <View style={styles.appBar}>
+          <FinishSignupAppBar
+            bankNameImage={bankNameImage}
+            appLogoImage={appLogoImage}
+          />
+          <CustomContainer title={'AR'} />
+        </View>
+
+        <DrawerItemList {...props} />
+        <View style={styles.switchContainer}>
+          <View style={styles.switchRow}>
+            <View style={styles.iconContainer}>
+              <Icon name="moon" size={18} color="#000" />
+            </View>
+            <Text style={[styles.drawerLabelStyle, {color: '#000'}]}>
+              Dark Mode
+            </Text>
+          </View>
+          <CustomSwitch />
+        </View>
       </View>
-      
-      <DrawerItemList {...props} />
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}>
-        <View
-          style={{
-            flexDirection: 'row',
-            gap: 30,
-            justifyContent: 'space-around',
-            alignItems: 'center',
-          }}>
-          <Icon name="moon" size={23} color="#000" style={{paddingLeft: 24}} />
-          <Text style={[styles.drawerLabelStyle, {color: '#000'}]}>
-            Dark Mode
+      <View style={{gap: 15}}>
+        <View style={styles.logoutContainer}>
+          <View
+            style={[
+              styles.iconContainer,
+              {backgroundColor: 'rgba(225, 7, 33, 0.2)'},
+            ]}>
+            <Icon name="power" size={20} color="#EB001B" />
+          </View>
+          <Text style={[styles.drawerLabelStyle, {color: '#EB001B'}]}>
+            Log Out
           </Text>
         </View>
-        <CustomSwitch />
-      </View>
-      <View
-        style={{
-          flexDirection: 'row',
-          gap: 18,
-          alignItems: 'center',
-        }}>
-        <Icon
-          name="power"
-          size={20}
-          color="#000"
-          style={{paddingLeft: 24, color: '#EB001B'}}
-        />
-        <Text style={[styles.drawerLabelStyle, {color: '#EB001B'}]}>
-          Log Out
-        </Text>
-      </View>
-      <View style={styles.sendMoneyCardList}>
-        <Image source={userProf} style={styles.logoListImage}></Image>
-        <View>
-          <Text style={styles.nameText}>Ahmad Sami</Text>
-
-          <Text style={styles.greyText}>+20 101 131 5412</Text>
+        <View style={styles.sendMoneyCardList}>
+          <Image source={userProf} style={styles.logoListImage} />
+          <View>
+            <Text style={styles.nameText}>Ahmad Sami</Text>
+            <Text style={styles.greyText}>+20 101 131 5412</Text>
+          </View>
+          <Icon name="ellipsis-vertical" size={20} style={{paddingLeft: 24}} />
         </View>
-        <Icon name="ellipsis-vertical" size={20} style={{paddingLeft: 24}} />
       </View>
     </DrawerContentScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  contentContainer: {
+    justifyContent: 'space-between',
+    flex: 1,
+    marginVertical: 16,
+  },
   appBar: {
+    marginHorizontal: 16,
     flexDirection: 'row',
     justifyContent: 'space-between',
     backgroundColor: 'transparent',
-    padding: 16,
   },
   sendMoneyCardList: {
     elevation: 4,
     shadowRadius: 18,
     flexDirection: 'row',
     height: 86,
-    // width: 78,
     backgroundColor: '#fff',
     borderRadius: 29,
     padding: 15,
-    margin: 16,
-    // justifyContent:'center',
+    marginHorizontal: 16,
     alignItems: 'center',
   },
   logoListImage: {
@@ -112,17 +108,40 @@ const styles = StyleSheet.create({
     lineHeight: 16.41,
     color: '#1C2437',
   },
-
   greyText: {
     fontSize: 12,
     fontWeight: '400',
     color: '#B7B7B7',
     lineHeight: 16.41,
   },
-
+  iconContainer: {
+    marginLeft: 20,
+    width: 33,
+    height: 33,
+    backgroundColor: 'rgba(27, 27, 27, 0.2)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 12,
+  },
   drawerLabelStyle: {
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  switchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  switchRow: {
+    flexDirection: 'row',
+    gap: 30,
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  logoutContainer: {
+    flexDirection: 'row',
+    gap: 18,
+    alignItems: 'center',
   },
   drawerItemStyle: {
     marginVertical: 5,
@@ -132,3 +151,5 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 40,
   },
 });
+
+export default CustomDrawerContent;

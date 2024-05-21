@@ -1,15 +1,12 @@
-
 import 'react-native-gesture-handler';
-import React from 'react';
+import React  from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import MainTabs from './MainTabs';
 import {AuthStack} from './AuthStack';
-import { HoomeDrawer } from './organism/HomeDrawer';
-// import {HoomeDrawer} from './';
+import {HoomeDrawer} from './organism/HomeDrawer';
 
 function App() {
   const isLoggedIn = true;
-  return (
+ return (
     <NavigationContainer independent={true}>
       {isLoggedIn ? <HoomeDrawer /> : <AuthStack />}
     </NavigationContainer>

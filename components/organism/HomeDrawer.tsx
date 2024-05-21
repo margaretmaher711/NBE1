@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Beneficiaries from '../pages/Beneficiaries';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -20,6 +20,7 @@ export function HoomeDrawer() {
         drawerInactiveTintColor: '#000',
         drawerActiveBackgroundColor: '#007236',
         drawerItemStyle: styles.drawerItemStyle,
+        // drawerContentContainerStyle:styles.drawerActiveBackStyle
       }}
       drawerContent={props => <CustomDrawerContent {...props} />}>
       <Drawer.Screen
@@ -35,11 +36,13 @@ export function HoomeDrawer() {
         options={{
           drawerLabel: 'Account Summary',
           drawerIcon: ({focused, size}) => (
-            <Icon
-              name="file-tray-stacked"
-              size={size}
-              color={focused ? '#fff' : '#000'}
-            />
+            <View style={styles.iconContainer}>
+              <Icon
+                name="file-tray-stacked"
+                size={18}
+                color={focused ? '#fff' : '#000'}
+              />
+            </View>
           ),
         }}
       />
@@ -49,11 +52,13 @@ export function HoomeDrawer() {
         options={{
           drawerLabel: 'Open Certificates & Deposits',
           drawerIcon: ({focused, size}) => (
-            <Icon
-              name="document"
-              size={size}
-              color={focused ? '#fff' : '#000'}
-            />
+            <View style={styles.iconContainer}>
+              <Icon
+                name="document"
+                size={18}
+                color={focused ? '#fff' : '#000'}
+              />
+            </View>
           ),
         }}
       />
@@ -63,7 +68,9 @@ export function HoomeDrawer() {
         options={{
           drawerLabel: 'Payement Services',
           drawerIcon: ({focused, size}) => (
-            <Icon name="card" size={size} color={focused ? '#fff' : '#000'} />
+            <View style={styles.iconContainer}>
+              <Icon name="card" size={18} color={focused ? '#fff' : '#000'} />
+            </View>
           ),
         }}
       />
@@ -73,11 +80,13 @@ export function HoomeDrawer() {
         options={{
           drawerLabel: 'Cards Services',
           drawerIcon: ({focused, size}) => (
-            <Icon
-              name="card-outline"
-              size={size}
-              color={focused ? '#fff' : '#000'}
-            />
+            <View style={styles.iconContainer}>
+              <Icon
+                name="card-outline"
+                size={18}
+                color={focused ? '#fff' : '#000'}
+              />
+            </View>
           ),
         }}
       />
@@ -87,7 +96,9 @@ export function HoomeDrawer() {
         options={{
           drawerLabel: 'Hard Token',
           drawerIcon: ({focused, size}) => (
-            <Icon name="key" size={size} color={focused ? '#fff' : '#000'} />
+            <View style={styles.iconContainer}>
+              <Icon name="key" size={18} color={focused ? '#fff' : '#000'} />
+            </View>
           ),
         }}
       />
@@ -97,11 +108,13 @@ export function HoomeDrawer() {
         options={{
           drawerLabel: 'Offers',
           drawerIcon: ({focused, size}) => (
-            <Icon
-              name="pricetag"
-              size={size}
-              color={focused ? '#fff' : '#000'}
-            />
+            <View style={styles.iconContainer}>
+              <Icon
+                name="pricetag"
+                size={18}
+                color={focused ? '#fff' : '#000'}
+              />
+            </View>
           ),
         }}
       />
@@ -111,7 +124,9 @@ export function HoomeDrawer() {
         options={{
           drawerLabel: 'Customer Services',
           drawerIcon: ({focused, size}) => (
-            <Icon name="people" size={size} color={focused ? '#fff' : '#000'} />
+            <View style={styles.iconContainer}>
+              <Icon name="people" size={18} color={focused ? '#fff' : '#000'} />
+            </View>
           ),
         }}
       />
@@ -121,11 +136,13 @@ export function HoomeDrawer() {
         options={{
           drawerLabel: 'Calculators',
           drawerIcon: ({focused, size}) => (
-            <Icon
-              name="calculator"
-              size={size}
-              color={focused ? '#fff' : '#000'}
-            />
+            <View style={styles.iconContainer}>
+              <Icon
+                name="calculator"
+                size={18}
+                color={focused ? '#fff' : '#000'}
+              />
+            </View>
           ),
         }}
       />
@@ -134,6 +151,21 @@ export function HoomeDrawer() {
 }
 
 const styles = StyleSheet.create({
+  drawerActiveBackStyle:{
+    borderRadius:20,
+    backgroundColor:'red'
+  },
+  iconContainer: {
+    width: 33,
+    height: 33,
+    backgroundColor: 'rgba(27, 27, 27, 0.2)',
+
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 12,
+    margin: 0,
+    padding: 0,
+  },
   appBar: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -184,7 +216,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   drawerItemStyle: {
-    marginVertical: 5,
+  
+    borderRadius:12,
   },
   drawerStyle: {
     borderBottomRightRadius: 40,
