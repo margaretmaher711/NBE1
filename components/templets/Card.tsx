@@ -3,13 +3,13 @@ import {StyleSheet} from 'react-native';
 import BalanceCard from '../molecules/BalanceCard';
 import HomeAppBar from '../organism/HomeAppBar';
 import CardHistory from '../organism/CardsHistory';
-import CreditCard from '../organism/CreditCard';
+import CreditCardHomeCards from '../organism/CreditCard';
 function CardsTemplet({navigation}): React.JSX.Element {
 
   return (
     <>
       <HomeAppBar navigation={navigation} />
-      <CreditCard />
+      <CreditCardHomeCards />
       <CardHistory />
     </>
   );

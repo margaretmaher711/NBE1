@@ -12,6 +12,8 @@ import Home from './pages/Home';
 import OtpTransfer from './pages/OtpTransfer';
 import AddBeneficiaries from './pages/AddBeneficiaries';
 import BeneficiariesHistory from './pages/BeneficiariesHistory';
+import AirPay from './pages/AirPay';
+import ATMs from './pages/ATMs';
 
 const Stack = createNativeStackNavigator();
 
@@ -40,6 +42,8 @@ export function HomeStack() {
       <Stack.Screen name="beneficiaries" component={Beneficiaries} />
       <Stack.Screen name="addBeneficiaries" component={AddBeneficiaries} />
       <Stack.Screen name="beneficiariesHistory" component={BeneficiariesHistory} />
+      <Stack.Screen name="airPay" component={AirPay} />
+      <Stack.Screen name="atms" component={ATMs} />
       <Stack.Screen name="otpTransfer" component={OtpTransfer} />
     </Stack.Navigator>
   );

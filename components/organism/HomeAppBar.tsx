@@ -3,17 +3,53 @@ import {
   Image,
   StyleSheet,
   Text,
-  Touchable,
   TouchableOpacity,
   View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import DrawerComponent, {CustomDrawerContent} from '../molecules/CustomDrawerContent';
-import {DrawerActions} from '@react-navigation/native';
 
-const HomeAppBar = ({navigation}) => {
+const HomeAppBar = ({navigation, backgroundColor = 'transparent'}) => {
   const userProf = require('../../assets/userprof.png');
-
+  const styles = StyleSheet.create({
+    contant: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      backgroundColor: backgroundColor,
+    },
+    userProf: {
+      width: 45,
+      height: 45,
+      borderRadius: 10,
+    },
+    menuStyle: {
+      color: '#000',
+    },
+    menuContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      height: 45,
+      flex: 0.6,
+    },
+    bellContainer: {
+      backgroundColor: '#fff',
+      borderRadius: 10,
+      padding: 10,
+      width: 45,
+      height: 45,
+      elevation: 4,
+    },
+    goodMorningMsg: {
+      color: '#000',
+      fontWeight: '400',
+      fontSize: 14,
+    },
+    userNameMsg: {
+      color: '#000',
+      fontWeight: '700',
+      fontSize: 14,
+    },
+  });
   return (
     <View style={styles.contant}>
       <View style={styles.menuContainer}>
@@ -36,40 +72,5 @@ const HomeAppBar = ({navigation}) => {
     </View>
   );
 };
-const styles = StyleSheet.create({
-  contant: {flexDirection: 'row', justifyContent: 'space-between'},
-  userProf: {
-    width: 45,
-    height: 45,
-    borderRadius: 10,
-  },
-  menuStyle: {
-    color: '#000',
-  },
-  menuContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    height: 45,
-    flex: 0.6,
-  },
-  bellContainer: {
-    backgroundColor: '#fff',
-    borderRadius: 10,
-    padding: 10,
-    width: 45,
-    height: 45,
-    elevation: 4,
-  },
-  goodMorningMsg: {
-    color: '#000',
-    fontWeight: '400',
-    fontSize: 14,
-  },
-  userNameMsg: {
-    color: '#000',
-    fontWeight: '700',
-    fontSize: 14,
-  },
-});
+
 export default HomeAppBar;

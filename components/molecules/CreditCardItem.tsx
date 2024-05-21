@@ -13,7 +13,7 @@ interface Props {
   creditCardVal: string;
 }
 
-const CreditCard: React.FC<Props> = ({creditCardVal}) => {
+const CreditCardItem: React.FC<Props> = ({creditCardVal}) => {
   const creditCardBg = '../../assets/creditCard.png';
   const visaIcon = '../../assets/visaIcon.png';
   const cardnfc = '../../assets/cardnfc.png';
@@ -89,4 +89,4 @@ const styles = StyleSheet.create({
     // textAlign: 'center',
   },
 });
-export default CreditCard;
+export default CreditCardItem;

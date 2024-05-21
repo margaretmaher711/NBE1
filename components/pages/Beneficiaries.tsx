@@ -17,10 +17,5 @@ const styles = StyleSheet.create({
     marginVertical: 15,
     backgroundColor: '#F1F3FB',
   },
-  bottomNavIcon: {
-    width: 25,
-    height: 25,
-    resizeMode: 'contain',
-  },
 });
 export default Beneficiaries;

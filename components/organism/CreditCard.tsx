@@ -1,8 +1,7 @@
 import React from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, View} from 'react-native';
 
-import HomeNamedCard from '../molecules/HomeNamedCard';
-import CreditCard from '../molecules/CreditCard';
+import CreditCard from '../molecules/CreditCardItem';
 import CardTitle from '../atoms/CardsTitles';
 
 const HomeCards = () => {
@@ -47,7 +46,7 @@ const HomeCards = () => {
     id: string;
   }
   return (
-    <View style={styles.homeShowCards}>
+    <View >
       <CardTitle title={'Cards'} />
       <FlatList
         horizontal={true}
@@ -70,11 +69,5 @@ const HomeCards = () => {
     </View>
   );
 };
-const styles = StyleSheet.create({
-  homeShowCards: {
-    // flex: 2,
-    // flexDirection: 'row',
-    // justifyContent: 'space-around',
-  },
-});
+
 export default HomeCards;

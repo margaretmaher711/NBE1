@@ -4,6 +4,8 @@ import {Image, StyleSheet, View} from 'react-native';
 import Transfer from './pages/Transfer';
 import Beneficiaries from './pages/Beneficiaries';
 import {HomeStack} from './AuthStack';
+import AirPay from './pages/AirPay';
+import ATMs from './pages/ATMs';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -84,7 +86,7 @@ function MainTabs() {
       />
       <Tab.Screen
         name="ATMs"
-        component={Beneficiaries}
+        component={ATMs}
         options={{
           tabBarLabel: 'ATMs',
           tabBarIcon: ({focused}) =>
@@ -105,7 +107,7 @@ function MainTabs() {
       />
       <Tab.Screen
         name="Air Pay"
-        component={Beneficiaries}
+        component={AirPay}
         options={{
           tabBarLabel: 'Air Pay',
           tabBarIcon: ({focused}) =>
