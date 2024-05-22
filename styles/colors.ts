@@ -17,7 +17,8 @@ const light = {
     // screenBG:'#F1F3FB',
     nativThemeContainerBG: '#fff',
     borderColor: '#fff',
-    noDataTit: '#464665',
+    noDataMsg: '#464665',
+
     ...commonColor,
 };
 
@@ -28,7 +29,6 @@ const dark = {
     darkBlue: '#E5E9F0',
     textColor: '#ffff',
     borderColor: 'gray',
-    noDataTit: '#fff',
     noDataMsg: '#fff',
 
     // screenBG:'#000',

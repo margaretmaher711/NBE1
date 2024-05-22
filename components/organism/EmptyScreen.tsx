@@ -26,7 +26,7 @@ const EmptyScreen = ({title, subTitle, img, addBeneficiary = false}) => {
       textAlign: 'center',
       fontWeight: '500',
       lineHeight: 23.44,
-      color: themeColors.noDataTit,
+      color: themeColors.noDataMsg,
     },
   });
   return (
