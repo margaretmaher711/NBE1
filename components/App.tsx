@@ -37,7 +37,7 @@ const isDarkTheme = 'dark';
 
 const themeColors = isDarkTheme ? colors.dark : colors.light;
 function App() {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   return (
     <ThemeProvider>
       <NavigationContainer independent={true}>
