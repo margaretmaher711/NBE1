@@ -13,14 +13,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import DropDown from '../molecules/CustomDropDown';
 import CustomButton from '../atoms/custombutton';
 import CustomTextInput from '../atoms/CustomTextInput';
+import {useTheme} from '../theme/ThemeContext';
 
 function AddBeneficiariesTemplet({navigation}): React.JSX.Element {
-  const [isFirstNameFocused, setIsFirstNameFocused] = useState(false);
-  const [isLastNameFocused, setIsLastNameFocused] = useState(false);
-  const [isAccNumFocused, setIsAccNumFocused] = useState(false);
-  const [isPhoneNumFocused, setIsPhoneNumFocused] = useState(false);
-  const [isEmailFocused, setIsEmailFocused] = useState(false);
-
   const [openType, setOpenType] = useState(false);
   const [valueType, setValueType] = useState(null);
   const [itemsType, setItemsType] = useState([
@@ -28,6 +23,89 @@ function AddBeneficiariesTemplet({navigation}): React.JSX.Element {
     {label: 'Mobile Wallet', value: 'mobile_wallet'},
     {label: 'Between your accounts', value: 'your_accounts'},
   ]);
+  const {themeColors} = useTheme();
+
+  const styles = StyleSheet.create({
+    textInput: {
+      flex: 1,
+      color: '#000',
+      paddingVertical: 5,
+    },
+    label: {
+      position: 'absolute',
+      top: 4,
+      left: 10,
+      backgroundColor: '#fff',
+      paddingHorizontal: 5,
+      fontSize: 14,
+      fontWeight: '700',
+      color: themeColors.darkBlue,
+    },
+    inputContainer: {
+      marginVertical: 15,
+      elevation: 4,
+      shadowRadius: 10,
+      flexDirection: 'row',
+      alignItems: 'center',
+      borderColor: '#007236',
+      backgroundColor: '#fff',
+      borderRadius: 10,
+      height: 70,
+      color: '#000',
+      paddingHorizontal: 10,
+    },
+    focusedContainer: {
+      borderWidth: 1.5,
+      color: '#007236',
+    },
+    flatListContent: {
+      flexGrow: 1,
+      justifyContent: 'space-between',
+    },
+    buttonContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      marginTop: 10,
+    },
+    content: {
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    dropdown: {
+      backgroundColor: '#fff',
+      borderWidth: 0,
+      borderBottomLeftRadius: 10,
+      borderBottomRightRadius: 10,
+      borderTopRightRadius: 0,
+      borderTopLeftRadius: 0,
+    },
+    rowContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    },
+    inputPassContainer: {
+      marginVertical: 15,
+      borderWidth: 1.5,
+      flexDirection: 'row',
+      alignItems: 'center',
+      borderColor: '#007236',
+      backgroundColor: '#ffff',
+      borderRadius: 10,
+      color: '#000',
+    },
+    camiraContainer: {
+      // flex:0.5,
+      height: 138,
+      width: 138,
+      backgroundColor: '#fff',
+      justifyContent: 'center',
+      alignItems: 'center',
+      elevation: 4,
+      borderRadius: 30,
+      // textAlign: 'center',
+    },
+  });
   const renderForm = () => (
     <>
       <View style={styles.content}>
@@ -74,7 +152,7 @@ function AddBeneficiariesTemplet({navigation}): React.JSX.Element {
             <View style={styles.buttonContainer}>
               <CustomButton
                 title="Add Beneficiar"
-                // onPressButton={() => navigation.navigate('otpTransfer')}
+                onPressButton={() => navigation.navigate('otpTransfer')}
               />
             </View>
             <View style={{height: 120}}></View>
@@ -84,86 +162,5 @@ function AddBeneficiariesTemplet({navigation}): React.JSX.Element {
     </>
   );
 }
-const styles = StyleSheet.create({
-  textInput: {
-    flex: 1,
-    color: '#000',
-    paddingVertical: 5,
-  },
-  label: {
-    position: 'absolute',
-    top: 4,
-    left: 10,
-    backgroundColor: '#fff',
-    paddingHorizontal: 5,
-    fontSize: 14,
-    fontWeight: '700',
-   color: themeColors.darkBlue,
-  },
-  inputContainer: {
-    marginVertical: 15,
-    elevation: 4,
-    shadowRadius: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderColor: '#007236',
-    backgroundColor: '#fff',
-    borderRadius: 10,
-    height: 70,
-    color: '#000',
-    paddingHorizontal: 10,
-  },
-  focusedContainer: {
-    borderWidth: 1.5,
-    color: '#007236',
-  },
-  flatListContent: {
-    flexGrow: 1,
-    justifyContent: 'space-between',
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    marginTop: 10,
-  },
-  content: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  dropdown: {
-    backgroundColor: '#fff',
-    borderWidth: 0,
-    borderBottomLeftRadius: 10,
-    borderBottomRightRadius: 10,
-    borderTopRightRadius: 0,
-    borderTopLeftRadius: 0,
-  },
-  rowContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  inputPassContainer: {
-    marginVertical: 15,
-    borderWidth: 1.5,
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderColor: '#007236',
-    backgroundColor: '#ffff',
-    borderRadius: 10,
-    color: '#000',
-  },
-  camiraContainer: {
-    // flex:0.5,
-    height: 138,
-    width: 138,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center',
-    elevation: 4,
-    borderRadius: 30,
-    // textAlign: 'center',
-  },
-});
 
 export default AddBeneficiariesTemplet;

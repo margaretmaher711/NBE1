@@ -5,10 +5,45 @@ import WhiteFillFeild from '../atoms/whitefillfield';
 import CustomButton from '../atoms/custombutton';
 import SignupTitles from '../molecules/SignupTitles';
 import {useNavigation} from '@react-navigation/native';
+import { useTheme } from '../theme/ThemeContext';
 function SignUp(): React.JSX.Element {
   const mobIcon = 'phone-portrait-sharp';
   const navigation = useNavigation();
-
+  const {themeColors}=useTheme();
+  const styles = StyleSheet.create({
+    contant: {
+      flex: 1,
+      marginHorizontal: 20,
+      marginVertical: 15,
+      backgroundColor: '#F1F3FB',
+    },
+    loginContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+    },
+    upperCont: {flex: 6},
+    lowerCont: {
+      flex: 1,
+      marginBottom: 10,
+      alignItems: 'center',
+      justifyContent: 'space-between',
+    },
+  
+    containerPad: {
+      marginTop: 15,
+      // marginHorizontal: 20,
+    },
+  
+    container: {
+      // marginHorizontal: 20,
+      marginTop: 20,
+    },
+    highlight: {
+     color: themeColors.darkBlue,
+      fontWeight: 'bold',
+    },
+  });
   return (
     <SafeAreaView style={styles.contant}>
       <View style={styles.upperCont}>
@@ -40,38 +75,5 @@ function SignUp(): React.JSX.Element {
     </SafeAreaView>
   );
 }
-const styles = StyleSheet.create({
-  contant: {
-    flex: 1,
-    marginHorizontal: 20,
-    marginVertical: 15,
-    backgroundColor: '#F1F3FB',
-  },
-  loginContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-  },
-  upperCont: {flex: 6},
-  lowerCont: {
-    flex: 1,
-    marginBottom: 10,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
 
-  containerPad: {
-    marginTop: 15,
-    // marginHorizontal: 20,
-  },
-
-  container: {
-    // marginHorizontal: 20,
-    marginTop: 20,
-  },
-  highlight: {
-   color: themeColors.darkBlue,
-    fontWeight: 'bold',
-  },
-});
 export default SignUp;

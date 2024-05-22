@@ -3,11 +3,11 @@ import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 import Transfer from './pages/Transfer';
 import Beneficiaries from './pages/Beneficiaries';
-import {HomeStack} from './AuthStack';
 import AirPay from './pages/AirPay';
 import ATMs from './pages/ATMs';
 import {useTheme} from './theme/ThemeContext';
 import {DefaultTheme, Provider} from 'react-native-paper';
+import {HomeStack} from './AuthStack';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     width: 65,
     height: 65,
-    resizeMode:'stretch',
+    resizeMode: 'stretch',
     alignItems: 'center',
     paddingTop: 7,
     marginBottom: 15,

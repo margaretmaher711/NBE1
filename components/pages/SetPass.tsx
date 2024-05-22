@@ -6,6 +6,7 @@ import CustomButton from '../atoms/custombutton';
 import SignupTitles from '../molecules/SignupTitles';
 import {useNavigation} from '@react-navigation/native';
 import CustomRoundedCheck from '../molecules/CustomRoundedCheck';
+import { useTheme } from '../theme/ThemeContext';
 
 function SetPass(): React.JSX.Element {
   const passIcon = 'lock-closed-outline';
@@ -18,7 +19,45 @@ function SetPass(): React.JSX.Element {
   const [isMinimumLength, setIsMinimumLength] = useState(false);
   const [isValidInput, setIsValidInput] = useState(false);
   const [isMatchedInputs, setMatchedInputs] = useState(false);
+  const {themeColors}=useTheme();
 
+const styles = StyleSheet.create({
+  ckeckItemsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    // flexWrap:'wrap',
+  },
+  contant: {
+    flex: 1,
+    marginHorizontal: 20,
+    marginVertical: 15,
+    backgroundColor: '#F1F3FB',
+  },
+  loginContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+  },
+  upperCont: {flex: 6},
+  lowerCont: {
+    flex: 0.5,
+    marginBottom: 10,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+
+  containerPad: {
+    marginTop: 15,
+  },
+
+  container: {
+    marginTop: 20,
+  },
+  highlight: {
+   color: themeColors.darkBlue,
+    fontWeight: 'bold',
+  },
+});
   const validateInput = (inputText: string) => {
     // Example validation rule: input should not be empty
     // const isValidInput = inputText.trim() !== '';
@@ -112,41 +151,5 @@ function SetPass(): React.JSX.Element {
     </SafeAreaView>
   );
 }
-const styles = StyleSheet.create({
-  ckeckItemsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    // flexWrap:'wrap',
-  },
-  contant: {
-    flex: 1,
-    marginHorizontal: 20,
-    marginVertical: 15,
-    backgroundColor: '#F1F3FB',
-  },
-  loginContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-  },
-  upperCont: {flex: 6},
-  lowerCont: {
-    flex: 0.5,
-    marginBottom: 10,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
 
-  containerPad: {
-    marginTop: 15,
-  },
-
-  container: {
-    marginTop: 20,
-  },
-  highlight: {
-   color: themeColors.darkBlue,
-    fontWeight: 'bold',
-  },
-});
 export default SetPass;

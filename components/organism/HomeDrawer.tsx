@@ -11,7 +11,7 @@ const Drawer = createDrawerNavigator();
 
 export function HoomeDrawer() {
   const {themeColors} = useTheme(); // Access the theme colors
-  console.log('themecc', themeColors.themeColor);
+  // console.log('themecc', themeColors.themeColor);
   const styles = StyleSheet.create({
     iconContainer: {
       width: 33,
@@ -52,7 +52,7 @@ export function HoomeDrawer() {
       fontSize: 14,
       fontWeight: '700',
       lineHeight: 16.41,
-     color: themeColors.darkBlue,
+      color: themeColors.darkBlue,
     },
     rowContainerData: {
       flexDirection: 'row',
@@ -88,9 +88,7 @@ export function HoomeDrawer() {
           styles.drawerStyle,
           {backgroundColor: themeColors.themeColor},
         ],
-        drawerLabelStyle: [
-          styles.drawerLabelStyle,
-        ],
+        drawerLabelStyle: [styles.drawerLabelStyle],
         drawerActiveTintColor: themeColors.activeColor,
         drawerInactiveTintColor: themeColors.textColor,
         drawerActiveBackgroundColor: themeColors.boxActiveColor,
@@ -111,11 +109,7 @@ export function HoomeDrawer() {
           drawerLabel: 'Account Summary',
           drawerIcon: ({focused, size}) => (
             <View style={styles.iconContainer}>
-              <Icon
-                name="file-tray-stacked"
-                size={18}
-                color={'#000'}
-              />
+              <Icon name="file-tray-stacked" size={18} color={'#000'} />
             </View>
           ),
         }}
@@ -151,11 +145,7 @@ export function HoomeDrawer() {
           drawerLabel: 'Cards Services',
           drawerIcon: ({focused, size}) => (
             <View style={styles.iconContainer}>
-              <Icon
-                name="card-outline"
-                size={18}
-                color={'#000'}
-              />
+              <Icon name="card-outline" size={18} color={'#000'} />
             </View>
           ),
         }}
@@ -203,11 +193,7 @@ export function HoomeDrawer() {
           drawerLabel: 'Calculators',
           drawerIcon: ({focused, size}) => (
             <View style={styles.iconContainer}>
-              <Icon
-                name="calculator"
-                size={18}
-                color={'#000'}
-              />
+              <Icon name="calculator" size={18} color={'#000'} />
             </View>
           ),
         }}

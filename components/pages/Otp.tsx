@@ -5,32 +5,11 @@ import CustomButton from '../atoms/custombutton';
 import SignupTitles from '../molecules/SignupTitles';
 import {useNavigation} from '@react-navigation/native';
 import CustomOtpInput from '../atoms/CustomOtpInput';
+import { useTheme } from '../theme/ThemeContext';
 function Otp(): React.JSX.Element {
   const navigation = useNavigation();
+  const {themeColors}=useTheme();
 
-  return (
-    <SafeAreaView style={styles.contant}>
-      <View style={styles.upperCont}>
-        <SignupAppBarOrganism />
-        <SignupTitles
-          title="Verification"
-          subtitle="Enter 5 digit code we sent to +20 101 131 5412"
-        />
-        <CustomOtpInput />
-        <Text style={styles.subTitle}>Didn’t receive the code?</Text>
-        <Text style={styles.title}>Request new one in 00:12</Text>
-      </View>
-      <View style={styles.lowerCont}>
-        <View style={styles.loginContainer}>
-          <CustomButton
-            title="Submit"
-            onPressButton={() => navigation.navigate('setpass')}
-          />
-        </View>
-      </View>
-    </SafeAreaView>
-  );
-}
 const styles = StyleSheet.create({
   contant: {
     flex: 1,
@@ -66,4 +45,28 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
 });
+  return (
+    <SafeAreaView style={styles.contant}>
+      <View style={styles.upperCont}>
+        <SignupAppBarOrganism />
+        <SignupTitles
+          title="Verification"
+          subtitle="Enter 5 digit code we sent to +20 101 131 5412"
+        />
+        <CustomOtpInput />
+        <Text style={styles.subTitle}>Didn’t receive the code?</Text>
+        <Text style={styles.title}>Request new one in 00:12</Text>
+      </View>
+      <View style={styles.lowerCont}>
+        <View style={styles.loginContainer}>
+          <CustomButton
+            title="Submit"
+            onPressButton={() => navigation.navigate('setpass')}
+          />
+        </View>
+      </View>
+    </SafeAreaView>
+  );
+}
+
 export default Otp;

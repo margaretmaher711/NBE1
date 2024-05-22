@@ -1,8 +1,26 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {OtpInput} from 'react-native-otp-entry/dist/OtpInput/OtpInput';
+import { useTheme } from '../theme/ThemeContext';
 const CustomOtpInput = () => {
-  return (
+  const {themeColors}=useTheme();
+
+const styles = StyleSheet.create({
+  activePinCodeContainer: {
+    borderColor: '#007236',
+    borderWidth: 1.5,
+  },
+  pinCodeText: {
+   color: themeColors.darkBlue,
+  },
+  pinCodeContainer: {
+    marginVertical: 20,
+    borderColor: '#ffff',
+    backgroundColor: '#fff',
+    elevation: 2,
+    borderRadius: 10,
+  },
+});  return (
     <OtpInput
       numberOfDigits={6}
       //   focusColor="green"
@@ -22,20 +40,5 @@ const CustomOtpInput = () => {
     />
   );
 };
-const styles = StyleSheet.create({
-  activePinCodeContainer: {
-    borderColor: '#007236',
-    borderWidth: 1.5,
-  },
-  pinCodeText: {
-   color: themeColors.darkBlue,
-  },
-  pinCodeContainer: {
-    marginVertical: 20,
-    borderColor: '#ffff',
-    backgroundColor: '#fff',
-    elevation: 2,
-    borderRadius: 10,
-  },
-});
+
 export default CustomOtpInput;
