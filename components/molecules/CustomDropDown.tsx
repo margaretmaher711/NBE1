@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
+import {useTheme} from '../theme/ThemeContext';
 
 interface Props {
   title: string;
@@ -23,49 +24,60 @@ const DropDown: React.FC<Props> = ({
   setItemsType,
   zIndex = 3000,
 }) => {
+  const {themeColors} = useTheme();
+
+  const styles = StyleSheet.create({
+    dropdownContainer: {
+      gap: 5,
+      backgroundColor: themeColors.themeColor,
+      borderWidth: 0,
+
+      elevation: 0,
+    },
+    dropdown: {
+      backgroundColor: themeColors.themeColor,
+      borderWidth: 0,
+    },
+    dropdownLabel: {
+      paddingHorizontal: 13,
+
+      fontWeight: '700',
+      fontSize: 14,
+      color: themeColors.darkBlue,
+    },
+    containerStyle: {
+      borderWidth: 1,
+      borderRadius: 10,
+      padding: 10,
+      borderColor: themeColors.borderColor,
+      elevation: 4,
+      marginBottom: 10,
+      backgroundColor: themeColors.themeColor,
+      zIndex: zIndex,
+    },
+    itemLabel: {
+      color: themeColors.darkBlue, // Color for item labels
+      // backgroundColor:themeColors.nativThemeContainerBG,
+    },
+  });
   return (
-    <View style={[styles.dropdownContainer, {zIndex: zIndex}]}>
-      <Text style={styles.dropdownLabel}>{title}</Text>
-      <DropDownPicker
-        open={openType}
-        value={valueType}
-        items={itemsType}
-        setOpen={setOpenType}
-        setValue={setValueType}
-        setItems={setItemsType}
-        style={styles.dropdown}
-        dropDownStyle={styles.dropdown}
-      />
+    <View style={styles.containerStyle}>
+      <View style={[styles.dropdownContainer]}>
+        <Text style={styles.dropdownLabel}>{title}</Text>
+        <DropDownPicker
+          open={openType}
+          value={valueType}
+          items={itemsType}
+          setOpen={setOpenType}
+          setValue={setValueType}
+          setItems={setItemsType}
+          style={styles.dropdown}
+          textStyle={styles.itemLabel}
+          listItemLabelStyle={{color: '#000'}}
+        />
+      </View>
     </View>
   );
 };
-const styles = StyleSheet.create({
-  dropdownContainer: {
-    height: 40,
-    marginBottom: 70,
-    backgroundColor: '#fff',
-    borderWidth: 0,
-    borderBottomLeftRadius: 0,
-    borderBottomRightRadius: 0,
-    borderTopRightRadius: 10,
-    borderTopLeftRadius: 10,
-    elevation: 4,
-  },
-  dropdown: {
-    backgroundColor: '#fff',
-    borderWidth: 0,
-    borderBottomLeftRadius: 10,
-    borderBottomRightRadius: 10,
-    borderTopRightRadius: 0,
-    borderTopLeftRadius: 0,
-  },
-  dropdownLabel: {
-    paddingHorizontal: 13,
-    marginTop: 15,
-    marginBottom: 5,
-    fontWeight: '700',
-    fontSize: 14,
-    color: '#1C2437',
-  },
-});
+
 export default DropDown;

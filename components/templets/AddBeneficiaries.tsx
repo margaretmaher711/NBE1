@@ -12,6 +12,7 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 import DropDown from '../molecules/CustomDropDown';
 import CustomButton from '../atoms/custombutton';
+import CustomTextInput from '../atoms/CustomTextInput';
 
 function AddBeneficiariesTemplet({navigation}): React.JSX.Element {
   const [isFirstNameFocused, setIsFirstNameFocused] = useState(false);
@@ -36,39 +37,11 @@ function AddBeneficiariesTemplet({navigation}): React.JSX.Element {
       </View>
 
       <View style={styles.rowContainer}>
-        <View
-          style={[
-            styles.inputContainer,
-            isFirstNameFocused && styles.focusedContainer,
-            {width: '47%'},
-          ]}>
-          <Text
-            style={[styles.label, isFirstNameFocused && {color: '#007236'}]}>
-            First Name
-          </Text>
-          <TextInput
-            style={styles.textInput}
-            //   placeholder="First Name"
-            placeholderTextColor="#007236"
-            onFocus={() => setIsFirstNameFocused(true)}
-            onBlur={() => setIsFirstNameFocused(false)}
-          />
+        <View style={[{width: '47%'}]}>
+          <CustomTextInput lable={'First Name'} />
         </View>
-        <View
-          style={[
-            styles.inputContainer,
-            isLastNameFocused && styles.focusedContainer,
-            {width: '47%'},
-          ]}>
-          <Text style={[styles.label, isLastNameFocused && {color: '#007236'}]}>
-            Last Name
-          </Text>
-          <TextInput
-            style={styles.textInput}
-            placeholderTextColor="#007236"
-            onFocus={() => setIsLastNameFocused(true)}
-            onBlur={() => setIsLastNameFocused(false)}
-          />
+        <View style={[{width: '47%'}]}>
+          <CustomTextInput lable={'Last Name'} />
         </View>
       </View>
 
@@ -82,51 +55,10 @@ function AddBeneficiariesTemplet({navigation}): React.JSX.Element {
         title="Bank branch"
         zIndex={3000}
       />
-      <View
-        style={[
-          styles.inputContainer,
-          isAccNumFocused && styles.focusedContainer,
-        ]}>
-        <Text style={[styles.label, isAccNumFocused && {color: '#007236'}]}>
-          Account number
-        </Text>
-        <TextInput
-          style={styles.textInput}
-          placeholderTextColor="#007236"
-          onFocus={() => setIsAccNumFocused(true)}
-          onBlur={() => setIsAccNumFocused(false)}
-        />
-      </View>
-      <View
-        style={[
-          styles.inputContainer,
-          isPhoneNumFocused && styles.focusedContainer,
-        ]}>
-        <Text style={[styles.label, isPhoneNumFocused && {color: '#007236'}]}>
-          Phone number
-        </Text>
-        <TextInput
-          style={styles.textInput}
-          placeholderTextColor="#007236"
-          onFocus={() => setIsPhoneNumFocused(true)}
-          onBlur={() => setIsPhoneNumFocused(false)}
-        />
-      </View>
-      <View
-        style={[
-          styles.inputContainer,
-          isEmailFocused && styles.focusedContainer,
-        ]}>
-        <Text style={[styles.label, isEmailFocused && {color: '#007236'}]}>
-          Email
-        </Text>
-        <TextInput
-          style={styles.textInput}
-          placeholderTextColor="#007236"
-          onFocus={() => setIsEmailFocused(true)}
-          onBlur={() => setIsEmailFocused(false)}
-        />
-      </View>
+
+      <CustomTextInput lable={'Account number'} />
+      <CustomTextInput lable={'Phone number'} />
+      <CustomTextInput lable={'Email'} />
     </>
   );
   return (

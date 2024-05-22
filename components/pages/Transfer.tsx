@@ -15,10 +15,20 @@ import {useNavigation} from '@react-navigation/native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import WhiteFillFeild from '../atoms/whitefillfield';
 import DropDown from '../molecules/CustomDropDown';
+import {useTheme} from '../theme/ThemeContext';
+import CustomTextInput from '../atoms/CustomTextInput';
 
 function Transfer() {
   const navigation = useNavigation();
-
+  function amountValidation(amount) {
+    settextInputAmount(amount);
+    const amountPattern = /^\d+(\.\d{1,2})?$/;
+    if (!amountPattern.test(amount)) {
+      setIsAmountInvalid(true);
+    } else {
+      setIsAmountInvalid(false);
+    }
+  }
   const [openType, setOpenType] = useState(false);
   const [valueType, setValueType] = useState(null);
   const [itemsType, setItemsType] = useState([
@@ -35,6 +45,7 @@ function Transfer() {
     {label: '042-653214521245   -   $2,145,5874.25', value: '653214521245'},
   ]);
   const [textInputAmount, settextInputAmount] = useState('');
+  const [textInputReason, settextInputReason] = useState('');
   const [isAmountInvalid, setIsAmountInvalid] = useState(false);
   const [openTransferTo2, setOpenTransferTo2] = useState(false);
   const [valueTransferTo2, setValueTransferTo2] = useState(null);
@@ -43,16 +54,36 @@ function Transfer() {
     {label: 'Account 2', value: 'account_2'},
     {label: '056-32154875423   -   $1,523.48', value: '32154875423'},
   ]);
-
-  function amountValidation(amount) {
-    settextInputAmount(amount);
-    const amountPattern = /^\d+(\.\d{1,2})?$/;
-    if (!amountPattern.test(amount)) {
-      setIsAmountInvalid(true);
-    } else {
-      setIsAmountInvalid(false);
-    }
-  }
+  const {themeColors} = useTheme();
+  const styles = StyleSheet.create({
+    flatListContent: {
+      flexGrow: 1,
+      justifyContent: 'space-between',
+    },
+    container: {
+      flex: 1,
+      backgroundColor: themeColors.themeColor,
+    },
+    keyboardAvoidingView: {
+      flex: 1,
+    },
+    upperContainer: {
+      flex: 1,
+      paddingHorizontal: 20,
+      paddingVertical: 15,
+    },
+    lowerContainer: {
+      flex: 1,
+      paddingHorizontal: 20,
+      paddingVertical: 15,
+      alignItems: 'center',
+    },
+    buttonContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+    },
+  });
 
   const renderForm = () => (
     <>
@@ -86,14 +117,22 @@ function Transfer() {
         setItemsType={setItemsTransferTo2}
         zIndex={1000}
       />
-      <WhiteFillFeild
-        placeholder={'Amount to transfer'}
+
+      <CustomTextInput
+        lable={'Amount to transfer'}
+        keyboardType="numeric"
         validateInput={amountValidation}
         text={textInputAmount}
-        keyboardType="numeric"
       />
-      {isAmountInvalid && <Text>Sorry! Invalid Amount</Text>}
-      <WhiteFillFeild placeholder={'Reason of transfer'} />
+
+      {isAmountInvalid && (
+        <Text style={{color: themeColors.redColor}}>Sorry! Invalid Amount</Text>
+      )}
+      <CustomTextInput
+        lable={'Reason of transfer'}
+        validateInput={amountValidation}
+        text={textInputReason}
+      />
     </>
   );
 
@@ -130,61 +169,5 @@ function Transfer() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  flatListContent: {
-    flexGrow: 1,
-    justifyContent: 'space-between',
-  },
-  container: {
-    flex: 1,
-    backgroundColor: '#F1F3FB',
-  },
-  keyboardAvoidingView: {
-    flex: 1,
-  },
-  upperContainer: {
-    flex: 1,
-    paddingHorizontal: 20,
-    paddingVertical: 15,
-  },
-  lowerContainer: {
-    flex: 1,
-    paddingHorizontal: 20,
-    paddingVertical: 15,
-    alignItems: 'center',
-  },
-  dropdownContainer: {
-    height: 40,
-    marginBottom: 70,
-    backgroundColor: '#fff',
-    borderWidth: 0,
-    borderBottomLeftRadius: 0,
-    borderBottomRightRadius: 0,
-    borderTopRightRadius: 10,
-    borderTopLeftRadius: 10,
-  },
-  dropdown: {
-    backgroundColor: '#fff',
-    borderWidth: 0,
-    borderBottomLeftRadius: 10,
-    borderBottomRightRadius: 10,
-    borderTopRightRadius: 0,
-    borderTopLeftRadius: 0,
-  },
-  dropdownLabel: {
-    paddingHorizontal: 13,
-    marginTop: 15,
-    marginBottom: 5,
-    fontWeight: '700',
-    fontSize: 14,
-    color: '#1C2437',
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-  },
-});
 
 export default Transfer;
