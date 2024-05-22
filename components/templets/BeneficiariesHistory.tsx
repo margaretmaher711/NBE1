@@ -10,20 +10,10 @@ import HistoryCard from '../molecules/HistoryCard';
 import { useRoute } from '@react-navigation/native';
 
 function BeneficiariesHistoryTemplet({ navigation}): React.JSX.Element {
-  //   const img1 = require('../../assets/halaImg.png');
-  //   const img2 = require('../../assets/aymanImg.png');
   const route = useRoute();
 
   const userCard = route.params;
 
-  //   const userCard = {
-  //     name: 'Jasmine Robert',
-  //     id: '',
-  //     image: img1,
-  //     phoneNum: '+20 123 456 7890',
-  //     amount: '$802,828.61',
-  //     date: '15-5-2024',
-  //   };
   const beneficiariesHistory: ArrayLike<beneficiariesHistoryList> = [
     {
       name: 'Flat Rent',
@@ -93,7 +83,7 @@ function BeneficiariesHistoryTemplet({ navigation}): React.JSX.Element {
     id: string;
     date: string;
   }
-  console.log('userCard', userCard);
+  // console.log('userCard', userCard);
 
   return (
     <>

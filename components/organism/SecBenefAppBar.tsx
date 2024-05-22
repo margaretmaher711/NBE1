@@ -5,55 +5,58 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import {TouchableOpacity} from 'react-native';
 import AddButton from '../molecules/AddButton';
-import { useTheme } from '../theme/ThemeContext';
+import {useTheme} from '../theme/ThemeContext';
 
 const SecBenefAppBar = ({isGrid, setGrid}) => {
-  const {themeColors}=useTheme();
+  const {themeColors} = useTheme();
   const styles = StyleSheet.create({
-  sendMonyContainer: {
-    marginVertical: 30,
-  },
+    sendMonyContainer: {
+      marginVertical: 30,
+    },
 
-  homeTitles: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginVertical: 15,
-  },
-  title: {
-   color: themeColors.darkBlue,
-    fontWeight: '700',
-    fontSize: 20,
-  },
-  viewContainer: {
-    elevation: 15,
-    paddingHorizontal: 10,
+    homeTitles: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginVertical: 15,
+    },
+    title: {
+      color: themeColors.darkBlue,
+      fontWeight: '700',
+      fontSize: 20,
+    },
+    viewContainer: {
+      elevation: 15,
+      paddingHorizontal: 10,
+      backgroundColor: themeColors.themeColor,
+      borderColor: themeColors.borderColor,
+      borderWidth: 1,
+      paddingVertical: 2,
+      width: 70,
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      flexDirection: 'row',
+      // backgroundColor: '#fff',
+      textAlign: 'center',
+      borderRadius: 15,
+    },
+    content: {
+      width: 150,
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      flexDirection: 'row',
+    },
 
-    paddingVertical: 2,
-    width: 70,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexDirection: 'row',
-    backgroundColor: '#fff',
-    textAlign: 'center',
-    borderRadius: 15,
-  },
-  content: {
-    width: 150,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
-
-  greenContainer: {
-    borderRadius: 15,
-    width: 30,
-    height: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#007236',
-  },
-});  return (
+    greenContainer: {
+      borderRadius: 15,
+      width: 30,
+      height: 30,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#007236',
+    },
+  });
+  return (
     <View style={styles.homeTitles}>
       <Text style={styles.title}>Beneficiaries</Text>
       <View style={styles.content}>
@@ -77,7 +80,7 @@ const SecBenefAppBar = ({isGrid, setGrid}) => {
             </TouchableOpacity>
           </View>
         </View>
-        <AddButton />
+        <AddButton backColor={themeColors.themeColor} />
       </View>
     </View>
   );

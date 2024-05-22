@@ -1,27 +1,30 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {SafeAreaView, StyleSheet, View} from 'react-native';
 
 import BeneficiariesTemplet from '../templets/Beneficiaries';
 import BeneficiariesHistoryTemplet from '../templets/BeneficiariesHistory';
+import {useTheme} from '../theme/ThemeContext';
 
 function BeneficiariesHistory({navigation}): React.JSX.Element {
+  const {themeColors} = useTheme();
+  const styles = StyleSheet.create({
+    contant: {
+      marginHorizontal: 20,
+      flex: 1,
+      marginVertical: 15,
+    },
+    screenContainer: {
+      backgroundColor: themeColors.themeColor,
+      flex: 1,
+    },
+  });
   return (
-    <SafeAreaView style={styles.contant}>
-      <BeneficiariesHistoryTemplet navigation={navigation} />
+    <SafeAreaView style={styles.screenContainer}>
+      <View style={styles.contant}>
+        <BeneficiariesHistoryTemplet navigation={navigation} />
+      </View>
     </SafeAreaView>
   );
 }
-const styles = StyleSheet.create({
-  contant: {
-    flex: 1,
-    marginHorizontal: 20,
-    marginVertical: 15,
-    backgroundColor: '#F1F3FB',
-  },
-  bottomNavIcon: {
-    width: 25,
-    height: 25,
-    resizeMode: 'contain',
-  },
-});
+
 export default BeneficiariesHistory;

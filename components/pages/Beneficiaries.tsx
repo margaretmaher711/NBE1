@@ -1,21 +1,30 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {SafeAreaView, StyleSheet, View} from 'react-native';
 
 import BeneficiariesTemplet from '../templets/Beneficiaries';
+import {useTheme} from '../theme/ThemeContext';
 
 function Beneficiaries({navigation}): React.JSX.Element {
+  const {themeColors} = useTheme();
+
+  const styles = StyleSheet.create({
+    contant: {
+      marginHorizontal: 20,
+      flex: 1,
+      marginVertical: 15,
+    },
+    screenContainer: {
+      backgroundColor: themeColors.themeColor,
+      flex: 1,
+    },
+  });
   return (
-    <SafeAreaView style={styles.contant}>
-      <BeneficiariesTemplet navigation={navigation} />
+    <SafeAreaView style={styles.screenContainer}>
+      <View style={styles.contant}>
+        <BeneficiariesTemplet navigation={navigation} />
+      </View>
     </SafeAreaView>
   );
 }
-const styles = StyleSheet.create({
-  contant: {
-    flex: 1,
-    marginHorizontal: 20,
-    marginVertical: 15,
-    backgroundColor: '#F1F3FB',
-  },
-});
+
 export default Beneficiaries;

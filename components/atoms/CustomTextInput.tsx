@@ -28,7 +28,6 @@ const CustomTextInput: React.FC<{
       paddingHorizontal: 5,
       fontSize: 14,
       fontWeight: '700',
-      //  color: themeColors.darkBlue,
 
       color: themeColors.textColor,
     },

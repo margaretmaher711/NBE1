@@ -13,7 +13,7 @@ function BeneficiariesTemplet({navigation}): React.JSX.Element {
 
   const sendMoneyCards: ArrayLike<sendMoneyList> = [
     {
-      name: 'Jasmine Robert',
+      name: 'Jasmine ',
       id: '',
       image: img1,
       phoneNum: '+20 123 456 7890',
@@ -34,21 +34,21 @@ function BeneficiariesTemplet({navigation}): React.JSX.Element {
       amount: '$802,828.61',
     },
     {
-      name: 'Jasmine Robert',
+      name: 'Jasmine ',
       id: '',
       image: img1,
       phoneNum: '+20 123 456 7890',
       amount: '$802,828.61',
     },
     {
-      name: 'Jasmine Robert',
+      name: 'Jasmine ',
       id: '',
       image: img1,
       phoneNum: '+20 123 456 7890',
       amount: '$802,828.61',
     },
     {
-      name: 'Jasmine Robert',
+      name: 'Jasmine ',
       id: '',
       image: img1,
       phoneNum: '+20 123 456 7890',

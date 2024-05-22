@@ -12,11 +12,12 @@ const styles = StyleSheet.create({
   },
   pinCodeText: {
    color: themeColors.darkBlue,
+
   },
   pinCodeContainer: {
     marginVertical: 20,
     borderColor: '#ffff',
-    backgroundColor: '#fff',
+      backgroundColor: themeColors.themeColor,
     elevation: 2,
     borderRadius: 10,
   },
