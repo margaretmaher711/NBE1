@@ -52,7 +52,7 @@ export function HoomeDrawer() {
       fontSize: 14,
       fontWeight: '700',
       lineHeight: 16.41,
-      color: '#1C2437',
+     color: themeColors.darkBlue,
     },
     rowContainerData: {
       flexDirection: 'row',

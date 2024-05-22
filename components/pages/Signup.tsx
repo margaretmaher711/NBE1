@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   highlight: {
-    color: '#1C2437',
+   color: themeColors.darkBlue,
     fontWeight: 'bold',
   },
 });

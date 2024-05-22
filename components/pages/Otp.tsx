@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F1F3FB',
   },
   title: {
-    color: '#1C2437',
+   color: themeColors.darkBlue,
     fontSize: 16,
     fontWeight: '700',
     marginTop: 5,

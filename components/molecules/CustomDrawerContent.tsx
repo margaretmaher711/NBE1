@@ -55,7 +55,7 @@ export function CustomDrawerContent(props) {
       fontSize: 14,
       fontWeight: '700',
       lineHeight: 16.41,
-      color: '#1C2437',
+     color: themeColors.darkBlue,
     },
     greyText: {
       fontSize: 12,

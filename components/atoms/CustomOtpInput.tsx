@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
   },
   pinCodeText: {
-    color: '#1C2437',
+   color: themeColors.darkBlue,
   },
   pinCodeContainer: {
     marginVertical: 20,

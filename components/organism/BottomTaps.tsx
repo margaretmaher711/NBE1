@@ -16,7 +16,8 @@ function BottomTaps() {
       activeColor="#ffff"
       
      barStyle={{
-        backgroundColor: 'white',
+              backgroundColor: themeColors.themeColor,
+
         position: 'absolute',
         overflow: 'hidden',
         borderTopLeftRadius: 20,

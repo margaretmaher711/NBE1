@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   text: {
     marginLeft: 10,
     marginBottom: 6,
-    color: '#1C2437',
+   color: themeColors.darkBlue,
     fontSize: 16,
     fontWeight: '400',
   },

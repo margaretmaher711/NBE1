@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     marginVertical: 15,
   },
   title: {
-    color: '#1C2437',
+   color: themeColors.darkBlue,
     fontWeight: '700',
     fontSize: 20,
   },
