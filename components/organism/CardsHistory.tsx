@@ -2,12 +2,14 @@ import React from 'react';
 import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
 import {Divider} from '@rneui/base/dist/Divider/Divider';
 import CardTitle from '../atoms/CardsTitles';
+import { useTheme } from '../theme/ThemeContext';
 
 const CardHistory = () => {
   const img1 = require('../../assets/carrefour.png');
   const img2 = require('../../assets/anazon.png');
   const img3 = require('../../assets/jumia.png');
   const img4 = require('../../assets/halaImg.png');
+  const {themeColors} = useTheme();
   const historyCards: ArrayLike<historyList> = [
     {
       name: 'Carrefour',
@@ -41,6 +43,38 @@ const CardHistory = () => {
     image: string;
     id: string;
   }
+  const styles = StyleSheet.create({
+    historyCard: {
+      flexDirection: 'row',
+      height: 69,
+      marginHorizontal: 5,
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+
+    iconNameContainer: {
+      flex: 0.45,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+    },
+    amountSty: {
+      color: themeColors.darkBlue,
+      fontSize: 18,
+      fontWeight: '700',
+    },
+    dateSty: {
+      color: '#B7B7B7',
+      fontSize: 14,
+      fontWeight: '400',
+    },
+    nametSty: {
+      color: themeColors.darkBlue,
+
+      fontSize: 18,
+      fontWeight: '400',
+    },
+  });
   return (
     <>
       <CardTitle title={'History'} />
@@ -76,35 +110,5 @@ const CardHistory = () => {
     </>
   );
 };
-const styles = StyleSheet.create({
-  historyCard: {
-    flexDirection: 'row',
-    height: 69,
-    marginHorizontal: 5,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
 
-  iconNameContainer: {
-    flex: 0.45,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  amountSty: {
-    color: '#1C2437',
-    fontSize: 18,
-    fontWeight: '700',
-  },
-  dateSty: {
-    color: '#B7B7B7',
-    fontSize: 14,
-    fontWeight: '400',
-  },
-  nametSty: {
-    color: '#1C2437',
-    fontSize: 18,
-    fontWeight: '400',
-  },
-});
 export default CardHistory;

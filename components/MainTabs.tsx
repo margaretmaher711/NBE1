@@ -6,20 +6,29 @@ import Beneficiaries from './pages/Beneficiaries';
 import {HomeStack} from './AuthStack';
 import AirPay from './pages/AirPay';
 import ATMs from './pages/ATMs';
+import {useTheme} from './theme/ThemeContext';
+import {DefaultTheme, Provider} from 'react-native-paper';
 
 const Tab = createMaterialBottomTabNavigator();
 
 function MainTabs() {
+  const {themeColors} = useTheme(); // Access the theme colors
+
   return (
     <Tab.Navigator
       activeColor="#ffff"
+      inactiveColor={themeColors.textColor}
       barStyle={{
-        backgroundColor: 'white',
+        backgroundColor: themeColors.nativThemeContainerBG,
         position: 'absolute',
         overflow: 'hidden',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         height: 85,
+        borderWidth: 0,
+
+        borderTopWidth: 0,
+        elevation: 5,
       }}>
       <Tab.Screen
         name="homescreen"
@@ -141,8 +150,10 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     width: 65,
     height: 65,
+    resizeMode:'stretch',
     alignItems: 'center',
     paddingTop: 7,
+    marginBottom: 15,
   },
 });
 

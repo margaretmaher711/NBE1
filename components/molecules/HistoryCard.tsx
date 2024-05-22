@@ -1,6 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {Divider} from '@rneui/base/dist/Divider/Divider';
+import { useTheme } from '../theme/ThemeContext';
 
 interface Props {
   image: boolean;
@@ -8,6 +9,39 @@ interface Props {
 }
 
 const HistoryCard: React.FC<Props> = ({image, item}) => {
+  const {themeColors} = useTheme(); // Access the theme colors
+  const styles = StyleSheet.create({
+    historyCard: {
+      flexDirection: 'row',
+      height: 69,
+      marginHorizontal: 5,
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+  
+    iconNameContainer: {
+      width: '65%',
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 15,
+      // justifyContent: 'space-between',
+    },
+    amountSty: {
+      color: themeColors.darkBlue,
+      fontSize: 18,
+      fontWeight: '700',
+    },
+    dateSty: {
+      color: '#B7B7B7',
+      fontSize: 14,
+      fontWeight: '400',
+    },
+    nametSty: {
+      color: themeColors.darkBlue,
+      fontSize: 18,
+      fontWeight: '400',
+    },
+  });
   return (
     <>
       <View style={styles.historyCard}>
@@ -26,36 +60,5 @@ const HistoryCard: React.FC<Props> = ({image, item}) => {
     </>
   );
 };
-const styles = StyleSheet.create({
-  historyCard: {
-    flexDirection: 'row',
-    height: 69,
-    marginHorizontal: 5,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
 
-  iconNameContainer: {
-    width: '65%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 15,
-    // justifyContent: 'space-between',
-  },
-  amountSty: {
-    color: '#1C2437',
-    fontSize: 18,
-    fontWeight: '700',
-  },
-  dateSty: {
-    color: '#B7B7B7',
-    fontSize: 14,
-    fontWeight: '400',
-  },
-  nametSty: {
-    color: '#1C2437',
-    fontSize: 18,
-    fontWeight: '400',
-  },
-});
 export default HistoryCard;

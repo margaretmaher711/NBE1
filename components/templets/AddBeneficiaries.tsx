@@ -142,7 +142,7 @@ function AddBeneficiariesTemplet({navigation}): React.JSX.Element {
             <View style={styles.buttonContainer}>
               <CustomButton
                 title="Add Beneficiar"
-                onPressButton={() => navigation.navigate('otpTransfer')}
+                // onPressButton={() => navigation.navigate('otpTransfer')}
               />
             </View>
             <View style={{height: 120}}></View>

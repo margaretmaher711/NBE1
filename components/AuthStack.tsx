@@ -34,7 +34,8 @@ export function AuthStack() {
 export function HomeStack() {
   return (
     <Stack.Navigator
-      screenOptions={{headerShown: false}}
+      screenOptions={{headerShown: false,   
+      }}
       initialRouteName="home">
       <Stack.Screen name="home" component={Home} />
       <Stack.Screen name="cards" component={Cards} />

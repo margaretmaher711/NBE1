@@ -7,9 +7,12 @@ import {
   View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { useTheme } from '../theme/ThemeContext';
 
 const HomeAppBar = ({navigation, backgroundColor = 'transparent'}) => {
   const userProf = require('../../assets/userprof.png');
+  const {themeColors} = useTheme(); // Access the theme colors
+
   const styles = StyleSheet.create({
     contant: {
       flexDirection: 'row',
@@ -22,7 +25,7 @@ const HomeAppBar = ({navigation, backgroundColor = 'transparent'}) => {
       borderRadius: 10,
     },
     menuStyle: {
-      color: '#000',
+      color: themeColors.textColor,
     },
     menuContainer: {
       flexDirection: 'row',
@@ -32,7 +35,7 @@ const HomeAppBar = ({navigation, backgroundColor = 'transparent'}) => {
       flex: 0.6,
     },
     bellContainer: {
-      backgroundColor: '#fff',
+      backgroundColor: themeColors.nativThemeContainerBG,
       borderRadius: 10,
       padding: 10,
       width: 45,
@@ -40,12 +43,12 @@ const HomeAppBar = ({navigation, backgroundColor = 'transparent'}) => {
       elevation: 4,
     },
     goodMorningMsg: {
-      color: '#000',
+      color: themeColors.textColor,
       fontWeight: '400',
       fontSize: 14,
     },
     userNameMsg: {
-      color: '#000',
+      color: themeColors.textColor,
       fontWeight: '700',
       fontSize: 14,
     },

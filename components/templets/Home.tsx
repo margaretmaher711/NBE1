@@ -9,7 +9,6 @@ import {HoomeDrawer} from '../organism/HomeDrawer';
 function HomeTemplet({navigation}): React.JSX.Element {
   return (
     <>
-    {/* <HoomeDrawer /> */}
       <HomeAppBar navigation={navigation} />
       <BalanceCard balanceVal={'$2,374,654.25'} />
       <HomeCards />

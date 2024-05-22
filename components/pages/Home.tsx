@@ -1,30 +1,34 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import {SafeAreaView, StyleSheet, View} from 'react-native';
 
 import HomeTemplet from '../templets/Home';
-import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-
-const Tab = createMaterialBottomTabNavigator();
+import {useTheme} from '../theme/ThemeContext';
 
 function Home({navigation}): React.JSX.Element {
+  const {themeColors} = useTheme(); // Access the theme colors
+  const styles = StyleSheet.create({
+    contant: {
+      marginHorizontal: 20,
+      flex: 1,
+      marginVertical: 15,
+    },
+    screenContainer: {
+      backgroundColor: themeColors.themeColor,
+      flex: 1,
+    },
+    bottomNavIcon: {
+      width: 25,
+      height: 25,
+      resizeMode: 'contain',
+    },
+  });
   return (
-   
-    <SafeAreaView style={styles.contant}>
-      <HomeTemplet navigation={navigation} />
+    <SafeAreaView style={styles.screenContainer}>
+      <View style={styles.contant}>
+        <HomeTemplet navigation={navigation} />
+      </View>
     </SafeAreaView>
   );
 }
-const styles = StyleSheet.create({
-  contant: {
-    flex: 1,
-    marginHorizontal: 20,
-    marginVertical: 15,
-    backgroundColor: '#F1F3FB',
-  },
-  bottomNavIcon: {
-    width: 25,
-    height: 25,
-    resizeMode: 'contain',
-  },
-});
+
 export default Home;

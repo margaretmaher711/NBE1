@@ -1,5 +1,6 @@
 import ShowCard from '../atoms/ShowCard';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { useTheme } from '../theme/ThemeContext';
 
 interface Props {
   backgrounC: string;
@@ -15,7 +16,18 @@ const HomeNamedCard: React.FC<Props> = ({
   title,
   onPressButton
 }) => {
-
+  const {themeColors} = useTheme(); // Access the theme colors
+  const styles = StyleSheet.create({
+    textSty: {
+      color:themeColors.darkBlue,
+      fontSize: 16,
+      fontWeight: '400',
+    },
+    contant: {
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+  });
   return (
     <TouchableOpacity onPress={() => onPressButton()}>
       <View style={styles.contant}>
@@ -25,15 +37,5 @@ const HomeNamedCard: React.FC<Props> = ({
     </TouchableOpacity>
   );
 };
-const styles = StyleSheet.create({
-  textSty: {
-    color: '#1C2437',
-    fontSize: 16,
-    fontWeight: '400',
-  },
-  contant: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
+
 export default HomeNamedCard;
