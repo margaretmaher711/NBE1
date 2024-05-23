@@ -12,6 +12,7 @@ import CustomContainer from '../atoms/CustomContainer';
 import CustomSwitch from '../atoms/Switch';
 import FinishSignupAppBar from './FinishSignup';
 import {useTheme} from '../theme/ThemeContext';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const Drawer = createDrawerNavigator();
 
@@ -106,7 +107,8 @@ export function CustomDrawerContent(props) {
       {...props}
       style={styles.drawerContent}
       contentContainerStyle={styles.contentContainer}>
-      <View>
+    <ScrollView>
+    <View>
         <View style={styles.appBar}>
           <FinishSignupAppBar
             bankNameImage={bankNameImage}
@@ -150,6 +152,7 @@ export function CustomDrawerContent(props) {
           <Icon name="ellipsis-vertical" size={20} style={{paddingLeft: 24}} />
         </View>
       </View>
+    </ScrollView>
     </DrawerContentScrollView>
   );
 }

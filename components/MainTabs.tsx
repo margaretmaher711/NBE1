@@ -6,8 +6,7 @@ import Beneficiaries from './pages/Beneficiaries';
 import AirPay from './pages/AirPay';
 import ATMs from './pages/ATMs';
 import {useTheme} from './theme/ThemeContext';
-import {DefaultTheme, Provider} from 'react-native-paper';
-import {HomeStack} from './AuthStack';
+import { HomeStack } from './HomeStack';
 
 const Tab = createMaterialBottomTabNavigator();
 
