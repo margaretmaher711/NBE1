@@ -1,9 +1,8 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
-import OTPTransfer from '../templets/OtpTransfer';
 import {useTheme} from '../theme/ThemeContext';
-import OTPTemplet from '../templets/OTP';
 import {useNavigation} from '@react-navigation/native';
+import OTPTemplet from '../templets/Otp';
 function OtpTransfer(): React.JSX.Element {
   const {themeColors} = useTheme(); // Access the theme colors
   const navigation = useNavigation();

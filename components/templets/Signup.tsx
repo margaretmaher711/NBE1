@@ -113,10 +113,12 @@ function SignupTemplet({navigation}): React.JSX.Element {
           title="Mobile number"
           subtitle="Enter the mobile number registred in the bank"
         />
-        <View style={styles.containerPad}>
-          <WhiteFillFeild prefixIcon={mobIcon} placeholder={'Mobile number'} />
-        </View>
-        {/* <CustomTextInput lable={'Mobile number'} /> */}
+
+        <CustomTextInput
+          lable={'Mobile number'}
+          prefixIcon={mobIcon}
+          validateInput={() => {}}
+        />
       </View>
       <View style={styles.lowerCont}>
         <View style={styles.loginContainer}>
