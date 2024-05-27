@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
-import {useTheme} from '../theme/ThemeContext';
+import {useTheme} from '../shared/theme/ThemeContext';
 import {useNavigation} from '@react-navigation/native';
 import OTPTemplet from '../templets/Otp';
 function OtpTransfer(): React.JSX.Element {

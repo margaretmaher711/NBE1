@@ -2,7 +2,7 @@ import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 
 import HomeTemplet from '../templets/Home';
-import {useTheme} from '../theme/ThemeContext';
+import {useTheme} from '../shared/theme/ThemeContext';
 
 function Home({navigation}): React.JSX.Element {
   const {themeColors} = useTheme(); // Access the theme colors

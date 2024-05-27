@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
-import {StyleSheet, View, Text, Image} from 'react-native';
+import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
@@ -11,8 +11,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import CustomContainer from '../atoms/CustomContainer';
 import CustomSwitch from '../atoms/Switch';
 import FinishSignupAppBar from './FinishSignup';
-import {useTheme} from '../theme/ThemeContext';
+import {useTheme} from '../shared/theme/ThemeContext';
 import { ScrollView } from 'react-native-gesture-handler';
+import { useAuth } from '../shared/auth/AuthContext ';
 
 // const Drawer = createDrawerNavigator();
 
@@ -102,6 +103,12 @@ export function CustomDrawerContent(props) {
       borderTopRightRadius: 40,
     },
   });
+  const { logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+  };
+
   return (
     <DrawerContentScrollView
       {...props}
@@ -131,6 +138,7 @@ export function CustomDrawerContent(props) {
         </View>
       </View>
       <View style={{gap: 15}}>
+        <TouchableOpacity onPress={handleLogout}>
         <View style={styles.logoutContainer}>
           <View
             style={[
@@ -143,6 +151,7 @@ export function CustomDrawerContent(props) {
             Log Out
           </Text>
         </View>
+        </TouchableOpacity>
         <View style={styles.sendMoneyCardList}>
           <Image source={userProf} style={styles.logoListImage} />
           <View>

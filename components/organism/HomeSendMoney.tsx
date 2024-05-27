@@ -1,7 +1,7 @@
 import React from 'react';
 import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
 import HomeTitle from '../atoms/HomeTitle';
-import {useTheme} from '../theme/ThemeContext';
+import {useTheme} from '../shared/theme/ThemeContext';
 
 const HomeSendMoney = () => {
   const img1 = require('../../assets/halaImg.png');

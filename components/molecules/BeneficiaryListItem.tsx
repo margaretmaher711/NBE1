@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
-import {useTheme} from '../theme/ThemeContext';
+import {useTheme} from '../shared/theme/ThemeContext';
 
 interface Props {
   item: any;

@@ -1,7 +1,7 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {useTheme} from '../theme/ThemeContext';
+import {useTheme} from '../shared/theme/ThemeContext';
 import SetPassTemplet from '../templets/SetPass';
 
 function SetPass(): React.JSX.Element {

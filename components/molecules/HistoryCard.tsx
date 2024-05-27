@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {Divider} from '@rneui/base/dist/Divider/Divider';
-import { useTheme } from '../theme/ThemeContext';
+import { useTheme } from '../shared/theme/ThemeContext';
 
 interface Props {
   image: boolean;

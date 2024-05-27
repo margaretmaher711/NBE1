@@ -1,14 +1,15 @@
 import 'react-native-gesture-handler';
-import React, {useState, useEffect} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {AuthStack} from './AuthStack';
-import {HoomeDrawer} from './organism/HomeDrawer';
+import React, { useState, useEffect } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { AuthStack } from './AuthStack';
+import { HoomeDrawer } from './organism/HomeDrawer';
 import Splash from './pages/SplashPage';
-import {ThemeProvider} from './theme/ThemeContext';
+import { ThemeProvider } from './shared/theme/ThemeContext';
+import { AuthProvider, useAuth } from './shared/auth/AuthContext '; // Ensure the correct path
 
 function App() {
   const [isSplashVisible, setSplashVisible] = useState(true); // State to manage splash screen visibility
-  const isLoggedIn = false;
+  const { isLoggedIn } = useAuth();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -35,4 +36,10 @@ function App() {
   );
 }
 
-export default App;
+const AppWrapper = () => (
+  <AuthProvider>
+    <App />
+  </AuthProvider>
+);
+
+export default AppWrapper;

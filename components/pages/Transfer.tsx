@@ -15,7 +15,7 @@ import {useNavigation} from '@react-navigation/native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import WhiteFillFeild from '../atoms/whitefillfield';
 import DropDown from '../molecules/CustomDropDown';
-import {useTheme} from '../theme/ThemeContext';
+import {useTheme} from '../shared/theme/ThemeContext';
 import CustomTextInput from '../atoms/CustomTextInput';
 
 function Transfer() {

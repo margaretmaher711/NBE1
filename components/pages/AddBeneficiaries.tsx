@@ -3,7 +3,7 @@ import {SafeAreaView, StyleSheet, View} from 'react-native';
 
 import AddBeneficiariesTemplet from '../templets/AddBeneficiaries';
 import {ScrollView} from 'react-native-gesture-handler';
-import {useTheme} from '../theme/ThemeContext';
+import {useTheme} from '../shared/theme/ThemeContext';
 
 function AddBeneficiaries({navigation}): React.JSX.Element {
   const {themeColors} = useTheme(); // Access the theme colors

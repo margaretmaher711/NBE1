@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import RoundCheckbox from 'rn-round-checkbox';
-import { useTheme } from '../theme/ThemeContext';
+import { useTheme } from '../shared/theme/ThemeContext';
 
 interface Props {
   title: string;

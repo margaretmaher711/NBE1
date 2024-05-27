@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import ContactText from '../atoms/contacttxt';
-import {useTheme} from '../theme/ThemeContext';
+import {useTheme} from '../shared/theme/ThemeContext';
 
 const SignupTitles: React.FC<{title: string; subtitle: string}> = ({
   title,

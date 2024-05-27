@@ -10,7 +10,7 @@ import {
   View,
 } from 'react-native';
 
-import {useTheme} from '../theme/ThemeContext';
+import {useTheme} from '../shared/theme/ThemeContext';
 import CustomButton from '../atoms/custombutton';
 import CustomOtpInput from '../atoms/CustomOtpInput';
 import SignupTitles from '../molecules/SignupTitles';

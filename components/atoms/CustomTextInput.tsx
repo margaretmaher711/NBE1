@@ -6,7 +6,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import {useTheme} from '../theme/ThemeContext';
+import {useTheme} from '../shared/theme/ThemeContext';
 import Icon from 'react-native-vector-icons/Ionicons';
 const CustomTextInput: React.FC<{
   lable: string;

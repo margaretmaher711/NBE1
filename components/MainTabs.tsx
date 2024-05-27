@@ -5,7 +5,7 @@ import Transfer from './pages/Transfer';
 import Beneficiaries from './pages/Beneficiaries';
 import AirPay from './pages/AirPay';
 import ATMs from './pages/ATMs';
-import {useTheme} from './theme/ThemeContext';
+import {useTheme} from './shared/theme/ThemeContext';
 import { HomeStack } from './HomeStack';
 
 const Tab = createMaterialBottomTabNavigator();

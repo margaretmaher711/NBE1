@@ -2,7 +2,7 @@ import React from 'react';
 import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
 import {Divider} from '@rneui/base/dist/Divider/Divider';
 import CardTitle from '../atoms/CardsTitles';
-import { useTheme } from '../theme/ThemeContext';
+import { useTheme } from '../shared/theme/ThemeContext';
 
 const CardHistory = () => {
   const img1 = require('../../assets/carrefour.png');

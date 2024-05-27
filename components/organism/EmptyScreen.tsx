@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import AddButton from '../molecules/AddButton';
-import {useTheme} from '../theme/ThemeContext';
+import {useTheme} from '../shared/theme/ThemeContext';
 
 const EmptyScreen = ({title, subTitle, img, addBeneficiary = false}) => {
   const {themeColors} = useTheme();

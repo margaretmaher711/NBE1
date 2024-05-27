@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {useTheme} from '../theme/ThemeContext';
+import {useTheme} from '../shared/theme/ThemeContext';
 
 const HomeTitle: React.FC<{title: string}> = ({title}) => {
   const {themeColors} = useTheme(); // Access the theme colors

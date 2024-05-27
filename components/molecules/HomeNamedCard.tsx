@@ -1,6 +1,6 @@
 import ShowCard from '../atoms/ShowCard';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import { useTheme } from '../theme/ThemeContext';
+import { useTheme } from '../shared/theme/ThemeContext';
 
 interface Props {
   backgrounC: string;

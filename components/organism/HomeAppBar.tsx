@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { useTheme } from '../theme/ThemeContext';
+import { useTheme } from '../shared/theme/ThemeContext';
 
 const HomeAppBar = ({navigation, backgroundColor = 'transparent'}) => {
   const userProf = require('../../assets/userprof.png');

@@ -3,8 +3,14 @@ import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import CustomButton from '../atoms/custombutton';
 import FinishSignupAppBar from '../molecules/FinishSignup';
 import CongrateMsgText from '../atoms/CongrateMsg';
+import { useAuth } from '../shared/auth/AuthContext ';
 function FinishSignupTemplet(): React.JSX.Element {
   const lockIcon = 'lock-closed-outline';
+  const { login } = useAuth();
+
+  const handleLogin = () => {
+    login();
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -15,7 +21,7 @@ function FinishSignupTemplet(): React.JSX.Element {
       <View style={styles.lowerCont}>
         <CustomButton
           title={'Finish'}
-          onPressButton={null}
+          onPressButton={handleLogin}
           buttonColor={'white'}
           textColor="#007236"
         />

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {KeyboardAvoidingView, Platform, StyleSheet, View} from 'react-native';
 
-import {useTheme} from '../theme/ThemeContext';
+import {useTheme} from '../shared/theme/ThemeContext';
 import CustomButton from '../atoms/custombutton';
 import SignupTitles from '../molecules/SignupTitles';
 import SignupAppBarOrganism from '../organism/signupappbar';

@@ -1,6 +1,6 @@
 import {Dimensions, SafeAreaView, StyleSheet, View, Image} from 'react-native';
 
-import {useTheme} from '../theme/ThemeContext';
+import {useTheme} from '../shared/theme/ThemeContext';
 
 function Splash(): React.JSX.Element {
   const {themeColors} = useTheme(); // Access the theme colors

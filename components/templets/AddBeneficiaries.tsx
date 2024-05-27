@@ -13,7 +13,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import DropDown from '../molecules/CustomDropDown';
 import CustomButton from '../atoms/custombutton';
 import CustomTextInput from '../atoms/CustomTextInput';
-import {useTheme} from '../theme/ThemeContext';
+import {useTheme} from '../shared/theme/ThemeContext';
 
 function AddBeneficiariesTemplet({navigation}): React.JSX.Element {
   const [openType, setOpenType] = useState(false);
