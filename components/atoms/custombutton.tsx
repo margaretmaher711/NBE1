@@ -5,12 +5,20 @@ interface Props {
   onPressButton: Function | any;
   buttonColor: string;
   textColor: string;
+  opacity:any
 }
 
-const CustomButton: React.FC<Props> = ({title, onPressButton, buttonColor = '#007236',textColor='#ffff'}) => {
+const CustomButton: React.FC<Props> = ({
+  title,
+  onPressButton,
+  buttonColor = '#007236',
+  textColor = '#ffff',
+  opacity=1
+}) => {
   const styles = StyleSheet.create({
     appButtonContainer: {
       backgroundColor: buttonColor,
+      opacity: opacity,
       borderRadius: 12.5,
       // marginRight: 35,
       justifyContent: 'center',

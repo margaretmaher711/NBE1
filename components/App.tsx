@@ -8,11 +8,11 @@ import {ThemeProvider} from './theme/ThemeContext';
 
 function App() {
   const [isSplashVisible, setSplashVisible] = useState(true); // State to manage splash screen visibility
-  const isLoggedIn = true;
+  const isLoggedIn = false;
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setSplashVisible(false); // Hide splash screen after 3 seconds
+      setSplashVisible(false); // Hide splash screen after 2.5 seconds
     }, 2500);
 
     return () => clearTimeout(timer); // Clear the timer if the component is unmounted

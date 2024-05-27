@@ -129,18 +129,23 @@ function SetPassTemplet({navigation}): React.JSX.Element {
           </View>
         </View>
       </View>
-      {isMatchedInputs && isValidInput ? (
-        <View style={styles.lowerCont}>
-          <View style={styles.loginContainer}>
+
+      <View style={styles.lowerCont}>
+        <View style={styles.loginContainer}>
+          {isMatchedInputs && isValidInput ? (
             <CustomButton
               title="Submit"
               onPressButton={() => navigation.navigate('finishsignup')}
             />
-          </View>
+          ) : (
+            <CustomButton
+              title="Submit"
+              onPressButton={() => null}
+              opacity={0.7}
+            />
+          )}
         </View>
-      ) : (
-        <View></View>
-      )}
+      </View>
     </>
   );
 }
