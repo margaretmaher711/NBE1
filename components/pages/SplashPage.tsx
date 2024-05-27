@@ -1,9 +1,9 @@
 import {Dimensions, SafeAreaView, StyleSheet, View, Image} from 'react-native';
 
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 
 function Splash(): React.JSX.Element {
-  const {themeColors} = useTheme(); // Access the theme colors
+  const {themeColors} = useThemeCustome(); // Access the theme colors
 
   const styles = StyleSheet.create({
     contant: {
@@ -47,10 +47,10 @@ export default Splash;
 // import React from 'react';
 // import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 // import {useNavigation} from '@react-navigation/native';
-// import {useTheme} from '../theme/ThemeContext';
+// import {useThemeCustome} from '../theme/ThemeContext';
 // import SignupTemplet from '../templets/Signup';
 // function Splash(): React.JSX.Element {
-//   // const {themeColors} = useTheme();
+//   // const {themeColors} = useThemeCustome();
 //   // const navigation = useNavigation();
 //   const styles = StyleSheet.create({
 //     contant: {

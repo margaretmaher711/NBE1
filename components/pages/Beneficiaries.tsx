@@ -2,10 +2,10 @@ import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 
 import BeneficiariesTemplet from '../templets/Beneficiaries';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 
 function Beneficiaries({navigation}): React.JSX.Element {
-  const {themeColors} = useTheme();
+  const {themeColors} = useThemeCustome();
 
   const styles = StyleSheet.create({
     contant: {

@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 
 const HomeTitle: React.FC<{title: string}> = ({title}) => {
-  const {themeColors} = useTheme(); // Access the theme colors
+  const {themeColors} = useThemeCustome(); // Access the theme colors
   const styles = StyleSheet.create({
     homeTitles: {
       flexDirection: 'row',

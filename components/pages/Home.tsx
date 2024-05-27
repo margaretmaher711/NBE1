@@ -2,10 +2,10 @@ import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 
 import HomeTemplet from '../templets/Home';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 
 function Home({navigation}): React.JSX.Element {
-  const {themeColors} = useTheme(); // Access the theme colors
+  const {themeColors} = useThemeCustome(); // Access the theme colors
   const styles = StyleSheet.create({
     contant: {
       marginHorizontal: 20,

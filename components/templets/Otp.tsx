@@ -10,7 +10,7 @@ import {
   View,
 } from 'react-native';
 
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 import CustomButton from '../atoms/custombutton';
 import CustomOtpInput from '../atoms/CustomOtpInput';
 import SignupTitles from '../molecules/SignupTitles';
@@ -19,7 +19,7 @@ import SignupAppBarOrganism from '../organism/signupappbar';
 function OTPTemplet({navigation}): React.JSX.Element {
   const [otp, setOtp] = useState('');
 
-  const {themeColors} = useTheme(); // Access the theme colors
+  const {themeColors} = useThemeCustome(); // Access the theme colors
   const styles = StyleSheet.create({
     keyboardAvoidingView: {
       flex: 1,

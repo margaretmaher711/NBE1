@@ -1,10 +1,10 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import AddButton from '../molecules/AddButton';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 
 const EmptyScreen = ({title, subTitle, img, addBeneficiary = false}) => {
-  const {themeColors} = useTheme();
+  const {themeColors} = useThemeCustome();
   const styles = StyleSheet.create({
     emptyContainer: {
       flex: 1,

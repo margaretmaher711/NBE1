@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {Divider} from '@rneui/base/dist/Divider/Divider';
-import { useTheme } from '../shared/theme/ThemeContext';
+import { useThemeCustome } from '../shared/theme/ThemeContext';
 
 interface Props {
   image: boolean;
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const HistoryCard: React.FC<Props> = ({image, item}) => {
-  const {themeColors} = useTheme(); // Access the theme colors
+  const {themeColors} = useThemeCustome(); // Access the theme colors
   const styles = StyleSheet.create({
     historyCard: {
       flexDirection: 'row',

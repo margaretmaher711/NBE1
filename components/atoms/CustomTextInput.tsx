@@ -6,7 +6,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 import Icon from 'react-native-vector-icons/Ionicons';
 const CustomTextInput: React.FC<{
   lable: string;
@@ -16,7 +16,7 @@ const CustomTextInput: React.FC<{
   prefixIcon: string;
 }> = ({lable, keyboardType, validateInput, text, prefixIcon = null}) => {
   const [isAccNumFocused, setIsAccNumFocused] = useState(false);
-  const {themeColors} = useTheme();
+  const {themeColors} = useThemeCustome();
   const styles = StyleSheet.create({
     textInput: {
       flex: 1,
@@ -120,7 +120,7 @@ export default CustomTextInput;
 //   TextInput,
 //   View,
 // } from 'react-native';
-// import {useTheme} from '../theme/ThemeContext';
+// import {useThemeCustome} from '../theme/ThemeContext';
 // const CustomTextInput: React.FC<{
 //   lable: string;
 //   validateInput: (text: string) => void;
@@ -128,7 +128,7 @@ export default CustomTextInput;
 //   keyboardType: KeyboardTypeOptions;
 // }> = ({lable, keyboardType, validateInput, text}) => {
 //   const [isAccNumFocused, setIsAccNumFocused] = useState(false);
-//   const {themeColors} = useTheme();
+//   const {themeColors} = useThemeCustome();
 //   const styles = StyleSheet.create({
 //     textInput: {
 //       flex: 1,

@@ -1,10 +1,10 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 import SignupTemplet from '../templets/Signup';
 function SignUp(): React.JSX.Element {
-  const {themeColors} = useTheme();
+  const {themeColors} = useThemeCustome();
   const navigation = useNavigation();
   const styles = StyleSheet.create({
     contant: {

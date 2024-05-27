@@ -15,7 +15,7 @@ import {useNavigation} from '@react-navigation/native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import WhiteFillFeild from '../atoms/whitefillfield';
 import DropDown from '../molecules/CustomDropDown';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 import CustomTextInput from '../atoms/CustomTextInput';
 
 function Transfer() {
@@ -54,7 +54,7 @@ function Transfer() {
     {label: 'Account 2', value: 'account_2'},
     {label: '056-32154875423   -   $1,523.48', value: '32154875423'},
   ]);
-  const {themeColors} = useTheme();
+  const {themeColors} = useThemeCustome();
   const styles = StyleSheet.create({
     flatListContent: {
       flexGrow: 1,

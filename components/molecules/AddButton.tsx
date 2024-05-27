@@ -3,7 +3,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 
 interface Props {
   textColor: string;
@@ -14,7 +14,7 @@ const AddButton: React.FC<Props> = ({
   textColor = '#007236',
   backColor = '#fff',
 }) => {
-  const {themeColors} = useTheme();
+  const {themeColors} = useThemeCustome();
   const styles = StyleSheet.create({
     addContiner: {
       elevation: 15,

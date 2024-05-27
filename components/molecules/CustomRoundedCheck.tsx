@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import RoundCheckbox from 'rn-round-checkbox';
-import { useTheme } from '../shared/theme/ThemeContext';
+import { useThemeCustome } from '../shared/theme/ThemeContext';
 
 interface Props {
   title: string;
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const CustomRoundedCheck: React.FC<Props> = ({title, checked}) => {
-  const {themeColors}=useTheme();
+  const {themeColors}=useThemeCustome();
 
 const styles = StyleSheet.create({
   text: {

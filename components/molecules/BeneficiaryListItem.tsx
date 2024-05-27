@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 
 interface Props {
   item: any;
@@ -9,7 +9,7 @@ const phoneIcon = require('../../assets/callicon.png');
 const dollarIcon = require('../../assets/dolarsign.png');
 
 const BeneficiaryListItem: React.FC<Props> = ({item}) => {
-  const {themeColors} = useTheme();
+  const {themeColors} = useThemeCustome();
   const styles = StyleSheet.create({
     greyText: {
       fontSize: 12,

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {KeyboardAvoidingView, Platform, StyleSheet, View} from 'react-native';
 
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 import CustomButton from '../atoms/custombutton';
 import SignupTitles from '../molecules/SignupTitles';
 import SignupAppBarOrganism from '../organism/signupappbar';
@@ -18,7 +18,7 @@ function SetPassTemplet({navigation}): React.JSX.Element {
   const [isMinimumLength, setIsMinimumLength] = useState(false);
   const [isValidInput, setIsValidInput] = useState(false);
   const [isMatchedInputs, setMatchedInputs] = useState(false);
-  const {themeColors} = useTheme(); // Access the theme colors
+  const {themeColors} = useThemeCustome(); // Access the theme colors
   const styles = StyleSheet.create({
     ckeckItemsContainer: {
       flexDirection: 'row',

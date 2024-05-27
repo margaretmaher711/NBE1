@@ -13,7 +13,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import DropDown from '../molecules/CustomDropDown';
 import CustomButton from '../atoms/custombutton';
 import CustomTextInput from '../atoms/CustomTextInput';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 
 function AddBeneficiariesTemplet({navigation}): React.JSX.Element {
   const [openType, setOpenType] = useState(false);
@@ -23,7 +23,7 @@ function AddBeneficiariesTemplet({navigation}): React.JSX.Element {
     {label: 'Mobile Wallet', value: 'mobile_wallet'},
     {label: 'Between your accounts', value: 'your_accounts'},
   ]);
-  const {themeColors} = useTheme();
+  const {themeColors} = useThemeCustome();
 
   const styles = StyleSheet.create({
     textInput: {

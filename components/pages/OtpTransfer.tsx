@@ -5,9 +5,9 @@ import {
   View,
 } from 'react-native';
 import OTPTransfer from '../templets/OtpTransfer';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 function OtpTransfer(): React.JSX.Element {
-  const {themeColors} = useTheme(); // Access the theme colors
+  const {themeColors} = useThemeCustome(); // Access the theme colors
 
   const styles = StyleSheet.create({
     contant: {

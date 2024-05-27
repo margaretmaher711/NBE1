@@ -11,14 +11,14 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import CustomContainer from '../atoms/CustomContainer';
 import CustomSwitch from '../atoms/Switch';
 import FinishSignupAppBar from './FinishSignup';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useAuth } from '../shared/auth/AuthContext ';
 
 // const Drawer = createDrawerNavigator();
 
 export function CustomDrawerContent(props) {
-  const {themeColors} = useTheme(); // Access the theme colors
+  const {themeColors} = useThemeCustome(); // Access the theme colors
   // console.log('themecc2', themeColors.grayBG);
 
   const bankNameImage = require('../../assets/bank-ahly.png');

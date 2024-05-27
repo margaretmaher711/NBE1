@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 
 interface Props {
   title: string;
@@ -24,7 +24,7 @@ const DropDown: React.FC<Props> = ({
   setItemsType,
   zIndex = 3000,
 }) => {
-  const {themeColors} = useTheme();
+  const {themeColors} = useThemeCustome();
 
   const styles = StyleSheet.create({
     dropdownContainer: {

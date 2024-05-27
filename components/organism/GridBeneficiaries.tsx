@@ -2,11 +2,11 @@ import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 
 const GridBeneficiaries = ({sendMoneyCards}) => {
   const navigation = useNavigation();
-  const {themeColors} = useTheme();
+  const {themeColors} = useThemeCustome();
   const styles = StyleSheet.create({
     sendMoneyCard: {
       height: 86,

@@ -3,10 +3,10 @@ import {SafeAreaView, StyleSheet, View} from 'react-native';
 
 import BeneficiariesTemplet from '../templets/Beneficiaries';
 import BeneficiariesHistoryTemplet from '../templets/BeneficiariesHistory';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 
 function BeneficiariesHistory({navigation}): React.JSX.Element {
-  const {themeColors} = useTheme();
+  const {themeColors} = useThemeCustome();
   const styles = StyleSheet.create({
     contant: {
       marginHorizontal: 20,

@@ -1,13 +1,13 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import ContactText from '../atoms/contacttxt';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 
 const SignupTitles: React.FC<{title: string; subtitle: string}> = ({
   title,
   subtitle,
 }) => {
-  const {themeColors} = useTheme(); // Access the theme colors
+  const {themeColors} = useThemeCustome(); // Access the theme colors
 
   const styles = StyleSheet.create({
     title: {

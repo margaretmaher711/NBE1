@@ -5,12 +5,12 @@ import Beneficiaries from '../pages/Beneficiaries';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {CustomDrawerContent} from '../molecules/CustomDrawerContent';
 import MainTabs from '../MainTabs';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 
 const Drawer = createDrawerNavigator();
 
 export function HoomeDrawer() {
-  const {themeColors} = useTheme(); // Access the theme colors
+  const {themeColors} = useThemeCustome(); // Access the theme colors
   const styles = StyleSheet.create({
     iconContainer: {
       width: 33,

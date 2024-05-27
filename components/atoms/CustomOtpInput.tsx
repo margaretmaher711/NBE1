@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {OtpInput} from 'react-native-otp-entry/dist/OtpInput/OtpInput';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 const CustomOtpInput = ({setOtp}) => {
-  const {themeColors} = useTheme();
+  const {themeColors} = useThemeCustome();
 
   const styles = StyleSheet.create({
     activePinCodeContainer: {

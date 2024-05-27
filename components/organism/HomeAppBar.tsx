@@ -7,11 +7,11 @@ import {
   View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { useTheme } from '../shared/theme/ThemeContext';
+import { useThemeCustome } from '../shared/theme/ThemeContext';
 
 const HomeAppBar = ({navigation, backgroundColor = 'transparent'}) => {
   const userProf = require('../../assets/userprof.png');
-  const {themeColors} = useTheme(); // Access the theme colors
+  const {themeColors} = useThemeCustome(); // Access the theme colors
 
   const styles = StyleSheet.create({
     contant: {

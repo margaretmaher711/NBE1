@@ -1,10 +1,10 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 import {useNavigation} from '@react-navigation/native';
 import OTPTemplet from '../templets/Otp';
 function OtpTransfer(): React.JSX.Element {
-  const {themeColors} = useTheme(); // Access the theme colors
+  const {themeColors} = useThemeCustome(); // Access the theme colors
   const navigation = useNavigation();
   const styles = StyleSheet.create({
     contant: {

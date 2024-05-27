@@ -5,10 +5,10 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import {TouchableOpacity} from 'react-native';
 import AddButton from '../molecules/AddButton';
-import {useTheme} from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 
 const SecBenefAppBar = ({isGrid, setGrid}) => {
-  const {themeColors} = useTheme();
+  const {themeColors} = useThemeCustome();
   const styles = StyleSheet.create({
     sendMonyContainer: {
       marginVertical: 30,

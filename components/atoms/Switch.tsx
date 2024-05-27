@@ -1,10 +1,10 @@
 // CustomSwitch.js
 import React from 'react';
 import { Switch, StyleSheet } from 'react-native';
-import { useTheme } from '../shared/theme/ThemeContext';
+import { useThemeCustome } from '../shared/theme/ThemeContext';
 
 function CustomSwitch() {
-  const { isDarkTheme, toggleTheme } = useTheme(); // Access the theme and toggle function
+  const { isDarkTheme, toggleTheme } = useThemeCustome(); // Access the theme and toggle function
 
   return (
     <Switch
