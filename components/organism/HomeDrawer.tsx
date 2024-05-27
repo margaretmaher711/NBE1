@@ -4,7 +4,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import Beneficiaries from '../pages/Beneficiaries';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {CustomDrawerContent} from '../molecules/CustomDrawerContent';
-import MainTabs from '../MainTabs';
+import MainTabs from './MainTabs';
 import {useThemeCustome} from '../shared/theme/ThemeContext';
 
 const Drawer = createDrawerNavigator();

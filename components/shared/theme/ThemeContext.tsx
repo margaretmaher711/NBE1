@@ -1,6 +1,6 @@
 // ThemeContext.js
 import React, {createContext, useContext, useState} from 'react';
-import colors from '../../../styles/colors';
+import colors from '../../styles/colors';
 
 const ThemeContext = createContext();
 

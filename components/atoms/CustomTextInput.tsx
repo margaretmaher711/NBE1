@@ -25,9 +25,6 @@ const CustomTextInput: React.FC<{
       paddingHorizontal: 12,
     },
     label: {
-      // position: 'absolute',
-      // top: 4,
-      // left: 10,
       paddingHorizontal: 10,
       fontSize: 14,
       fontWeight: '700',
@@ -40,7 +37,6 @@ const CustomTextInput: React.FC<{
       elevation: 4,
       shadowRadius: 10,
       flexDirection: 'row',
-      // alignItems: 'center',
       backgroundColor: themeColors.themeColor,
       borderRadius: 10,
       height: 70,
@@ -52,8 +48,8 @@ const CustomTextInput: React.FC<{
     },
     focusedContainer: {
       borderWidth: 1.5,
-      color: '#007236',
-      borderColor: '#007236',
+      color: themeColors.boxActiveColor,
+      borderColor: themeColors.boxActiveColor,
     },
     flatListContent: {
       flexGrow: 1,
@@ -70,7 +66,7 @@ const CustomTextInput: React.FC<{
       alignItems: 'center',
     },
     dropdown: {
-      backgroundColor: '#fff',
+      backgroundColor: themeColors.commonWhite,
       borderWidth: 0,
       borderBottomLeftRadius: 10,
       borderBottomRightRadius: 10,
@@ -79,7 +75,7 @@ const CustomTextInput: React.FC<{
     },
     iconPrefix: {
       marginTop: 10,
-      color:'#B7B7B7'
+      color: '#B7B7B7',
     },
   });
   return (
@@ -161,8 +157,8 @@ export default CustomTextInput;
 //     },
 //     focusedContainer: {
 //       borderWidth: 1.5,
-//       color: '#007236',
-//       borderColor: '#007236',
+//       color: themeColors.boxActiveColor,
+//       borderColor: themeColors.boxActiveColor,
 //     },
 //     flatListContent: {
 //       flexGrow: 1,
@@ -179,7 +175,7 @@ export default CustomTextInput;
 //       alignItems: 'center',
 //     },
 //     dropdown: {
-//       backgroundColor: '#fff',
+//       backgroundColor: themeColors.commonWhite,
 //       borderWidth: 0,
 //       borderBottomLeftRadius: 10,
 //       borderBottomRightRadius: 10,
