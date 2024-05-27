@@ -1,9 +1,5 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import SignupAppBarOrganism from '../organism/signupappbar';
-import WhiteFillFeild from '../atoms/whitefillfield';
-import CustomButton from '../atoms/custombutton';
-import SignupTitles from '../molecules/SignupTitles';
 import {useNavigation} from '@react-navigation/native';
 import {useTheme} from '../theme/ThemeContext';
 import SignupTemplet from '../templets/Signup';

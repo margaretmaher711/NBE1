@@ -14,7 +14,7 @@ import FinishSignupAppBar from './FinishSignup';
 import {useTheme} from '../theme/ThemeContext';
 import { ScrollView } from 'react-native-gesture-handler';
 
-const Drawer = createDrawerNavigator();
+// const Drawer = createDrawerNavigator();
 
 export function CustomDrawerContent(props) {
   const {themeColors} = useTheme(); // Access the theme colors
@@ -85,7 +85,7 @@ export function CustomDrawerContent(props) {
     },
     switchRow: {
       flexDirection: 'row',
-      gap: 30,
+      gap: 20,
       justifyContent: 'space-around',
       alignItems: 'center',
     },

@@ -11,7 +11,6 @@ const Drawer = createDrawerNavigator();
 
 export function HoomeDrawer() {
   const {themeColors} = useTheme(); // Access the theme colors
-  // console.log('themecc', themeColors.themeColor);
   const styles = StyleSheet.create({
     iconContainer: {
       width: 33,
@@ -22,42 +21,7 @@ export function HoomeDrawer() {
       borderRadius: 12,
       margin: 0,
       padding: 0,
-    },
-    appBar: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      backgroundColor: 'transparent',
-      padding: 16,
-    },
-    sendMoneyCardList: {
-      elevation: 4,
-      shadowRadius: 18,
-      flexDirection: 'row',
-      height: 86,
-      // width: 78,
-      backgroundColor: '#fff',
-      borderRadius: 29,
-      padding: 15,
-      margin: 16,
-      // justifyContent:'center',
-      alignItems: 'center',
-    },
-    logoListImage: {
-      width: 60,
-      height: 60,
-      marginRight: 10,
-      resizeMode: 'contain',
-    },
-    nameText: {
-      fontSize: 14,
-      fontWeight: '700',
-      lineHeight: 16.41,
-      color: themeColors.darkBlue,
-    },
-    rowContainerData: {
-      flexDirection: 'row',
-      gap: 5,
-      alignItems: 'center',
+      
     },
 
     drawerLabelStyle: {
@@ -73,10 +37,6 @@ export function HoomeDrawer() {
     },
     container: {
       flex: 1,
-    },
-    appBarText: {
-      fontSize: 18,
-      fontWeight: 'bold',
     },
   });
   return (
@@ -94,7 +54,8 @@ export function HoomeDrawer() {
         drawerActiveBackgroundColor: themeColors.boxActiveColor,
         drawerItemStyle: styles.drawerItemStyle,
       }}
-      drawerContent={props => <CustomDrawerContent {...props} />}>
+      drawerContent={props => <CustomDrawerContent {...props} />}
+      >
       <Drawer.Screen
         name="Home"
         component={MainTabs}
@@ -107,6 +68,7 @@ export function HoomeDrawer() {
         component={Beneficiaries}
         options={{
           drawerLabel: 'Account Summary',
+
           drawerIcon: ({focused, size}) => (
             <View style={styles.iconContainer}>
               <Icon name="file-tray-stacked" size={18} color={'#000'} />

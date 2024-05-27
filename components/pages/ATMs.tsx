@@ -1,13 +1,13 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, View } from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
+import {SafeAreaView, StyleSheet, View} from 'react-native';
+import MapView, {Marker} from 'react-native-maps';
 import HomeAppBar from '../organism/HomeAppBar';
 
-function ATMs({ navigation }) {
+function ATMs({navigation}) {
   const markers = [
     {
-      latitude: 37.78800,
-      longitude: -122.4310,
+      latitude: 37.788,
+      longitude: -122.431,
       title: 'Foo Place',
       description: '1234 Foo Drive',
     },
@@ -28,8 +28,7 @@ function ATMs({ navigation }) {
           longitude: -122.4324,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
-        }}
-      >
+        }}>
         {markers.map((marker, index) => (
           <Marker
             key={index}
