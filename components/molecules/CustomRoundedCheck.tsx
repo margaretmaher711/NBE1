@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import RoundCheckbox from 'rn-round-checkbox';
-import { useThemeCustome } from '../shared/theme/ThemeContext';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 
 interface Props {
   title: string;
@@ -9,31 +9,28 @@ interface Props {
 }
 
 const CustomRoundedCheck: React.FC<Props> = ({title, checked}) => {
-  const {themeColors}=useThemeCustome();
+  const {themeColors} = useThemeCustome();
 
-const styles = StyleSheet.create({
-  text: {
-    marginLeft: 10,
-    marginBottom: 6,
-   color: themeColors.darkBlue,
-    fontSize: 16,
-    fontWeight: '400',
-  },
-  checkedItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-});  return (
+  const styles = StyleSheet.create({
+    text: {
+      marginLeft: 10,
+      marginBottom: 6,
+      color: themeColors.darkBlue,
+      fontSize: 16,
+      fontWeight: '400',
+    },
+    checkedItem: {
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+  });
+  return (
     <View style={styles.checkedItem}>
       <RoundCheckbox
         size={15}
         checked={checked}
         icon={null}
-        // onValueChange={(newValue: any) => {
-        //   console.log(newValue);
-        // }}
-        // style={styles.checkedVled}
-        backgroundColor="#007236"
+        backgroundColor={themeColors.boxActiveColor}
       />
       <Text style={styles.text}>{title}</Text>
     </View>

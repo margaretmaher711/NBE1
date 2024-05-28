@@ -4,7 +4,7 @@ import HomeAppBar from '../organism/HomeAppBar';
 import HomeCards from '../organism/HomeCards';
 import HomeHistory from '../organism/HomeHistory';
 import HomeSendMoney from '../organism/HomeSendMoney';
-import {HoomeDrawer} from '../organism/HomeDrawer';
+import HomeTitle from '../atoms/HomeTitle';
 
 function HomeTemplet({navigation}): React.JSX.Element {
   return (
@@ -13,6 +13,7 @@ function HomeTemplet({navigation}): React.JSX.Element {
       <BalanceCard balanceVal={'$2,374,654.25'} />
       <HomeCards />
       <HomeSendMoney />
+      <HomeTitle title={'History'} />
       <HomeHistory />
     </>
   );

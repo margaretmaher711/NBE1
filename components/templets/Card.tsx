@@ -1,35 +1,18 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
-import BalanceCard from '../molecules/BalanceCard';
 import HomeAppBar from '../organism/HomeAppBar';
 import CardHistory from '../organism/CardsHistory';
 import CreditCardHomeCards from '../organism/CreditCard';
+import CardTitle from '../atoms/CardsTitles';
 function CardsTemplet({navigation}): React.JSX.Element {
-
   return (
     <>
       <HomeAppBar navigation={navigation} />
+      <CardTitle title={'Cards'} />
       <CreditCardHomeCards />
+      <CardTitle title={'History'} />
       <CardHistory />
     </>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    marginHorizontal: 16,
-    marginTop: 15,
-    flex: 1,
-    backgroundColor: 'transparent',
-    textAlign: 'center',
-  },
-  upperCont: {flex: 5},
 
-  lowerCont: {
-    flexDirection: 'row',
-    flex: 0.5,
-    marginBottom: 10,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-});
 export default CardsTemplet;

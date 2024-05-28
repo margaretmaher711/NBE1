@@ -2,7 +2,6 @@ import React from 'react';
 import {FlatList, View} from 'react-native';
 
 import CreditCard from '../molecules/CreditCardItem';
-import CardTitle from '../atoms/CardsTitles';
 
 const HomeCards = () => {
   const img1 = '../../assets/carrefour.png';
@@ -47,7 +46,6 @@ const HomeCards = () => {
   }
   return (
     <View >
-      <CardTitle title={'Cards'} />
       <FlatList
         horizontal={true}
         data={cardsList}

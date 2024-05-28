@@ -1,13 +1,16 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView, View} from 'react-native';
 import CustomButton from '../atoms/custombutton';
 import FinishSignupAppBar from '../molecules/FinishSignup';
 import CongrateMsgText from '../atoms/CongrateMsg';
-import { useAuth } from '../shared/auth/AuthContext ';
+import {useAuth} from '../shared/auth/AuthContext ';
+import {useThemeStyles} from '../shared/theme/ThemeStyles';
+import getStyles from '../styles/FinishSignupTempletStyles';
+import {useThemeCustome} from '../shared/theme/ThemeContext';
 function FinishSignupTemplet(): React.JSX.Element {
-  const lockIcon = 'lock-closed-outline';
-  const { login } = useAuth();
-
+  const {login} = useAuth();
+  const styles = useThemeStyles(getStyles);
+  const {themeColors} = useThemeCustome();
   const handleLogin = () => {
     login();
   };
@@ -22,29 +25,11 @@ function FinishSignupTemplet(): React.JSX.Element {
         <CustomButton
           title={'Finish'}
           onPressButton={handleLogin}
-          buttonColor={'white'}
-          textColor="#007236"
+          buttonColor={themeColors.commonWhite}
+          textColor={themeColors.boxActiveColor}
         />
       </View>
     </SafeAreaView>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    marginHorizontal: 16,
-    marginTop: 15,
-    flex: 1,
-    backgroundColor: 'transparent',
-    textAlign: 'center',
-  },
-  upperCont: {flex: 5},
-
-  lowerCont: {
-    flexDirection: 'row',
-    flex: 0.5,
-    marginBottom: 10,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-});
 export default FinishSignupTemplet;

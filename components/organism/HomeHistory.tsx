@@ -1,6 +1,5 @@
 import React from 'react';
-import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
-import HomeTitle from '../atoms/HomeTitle';
+import {FlatList, } from 'react-native';
 import HistoryCard from '../molecules/HistoryCard';
 
 const HomeHistory = () => {
@@ -42,7 +41,6 @@ const HomeHistory = () => {
   }
   return (
     <>
-      <HomeTitle title={'History'} />
       <FlatList
         data={historyCards}
         showsVerticalScrollIndicator={false}
@@ -51,8 +49,6 @@ const HomeHistory = () => {
           return item.id;
         }}
         renderItem={itemData => {
-          // const imgName = itemData.item.image;
-
           return (
            <HistoryCard image={true} item={itemData.item}/>
           );

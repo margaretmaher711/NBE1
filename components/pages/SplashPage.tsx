@@ -1,34 +1,11 @@
-import {Dimensions, SafeAreaView, StyleSheet, View, Image} from 'react-native';
+import {SafeAreaView, View, Image} from 'react-native';
 
-import {useThemeCustome} from '../shared/theme/ThemeContext';
+import { useThemeStyles } from '../shared/theme/ThemeStyles';
+import getStyles from '../styles/SplashStyles';
 
 function Splash(): React.JSX.Element {
-  const {themeColors} = useThemeCustome(); // Access the theme colors
+  const styles = useThemeStyles(getStyles);
 
-  const styles = StyleSheet.create({
-    contant: {
-      marginTop: Dimensions.get('screen').height / 3,
-
-      flex: 1,
-      marginBottom: 15,
-      justifyContent: 'space-between',
-      alignItems: 'center',
-    },
-    screenContainer: {
-      backgroundColor: themeColors.themeColor,
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    logoImage: {
-      width: 110,
-      height: 130,
-    },
-    bankImg: {
-      width: 130,
-      height: 40,
-    },
-  });
   return (
     <SafeAreaView style={styles.screenContainer}>
       <View style={styles.contant}>

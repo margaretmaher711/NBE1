@@ -2,12 +2,11 @@ import React from 'react';
 
 import HomeAppBar from '../organism/HomeAppBar';
 import EmptyBeneficiaries from '../organism/EmptyScreen';
-import ListBeneficiaries from '../organism/ListBeneficiaries';
 import BeneficiaryListItem from '../molecules/BeneficiaryListItem';
 import CardTitle from '../atoms/CardsTitles';
-import {FlatList, View} from 'react-native';
-import HistoryCard from '../molecules/HistoryCard';
+import {View} from 'react-native';
 import {useRoute} from '@react-navigation/native';
+import TransactionHistory from '../organism/TransactionHistory';
 
 function BeneficiariesHistoryTemplet({navigation}): React.JSX.Element {
   const route = useRoute();
@@ -83,7 +82,6 @@ function BeneficiariesHistoryTemplet({navigation}): React.JSX.Element {
     id: string;
     date: string;
   }
-  // console.log('userCard', userCard);
 
   return (
     <>
@@ -98,20 +96,7 @@ function BeneficiariesHistoryTemplet({navigation}): React.JSX.Element {
         />
       )}
       {beneficiariesHistory.length !== 0 && (
-        <FlatList
-          data={beneficiariesHistory}
-          showsVerticalScrollIndicator={false}
-          keyExtractor={(item, index) => {
-            item.id = index.toString();
-            return item.id;
-          }}
-          renderItem={itemData => {
-            // const imgName = itemData.item.image;
-
-            return <HistoryCard image={false} item={itemData.item} />;
-          }}
-          alwaysBounceVertical={false}
-        />
+        <TransactionHistory beneficiariesHistory={beneficiariesHistory} />
       )}
       <View style={{height: 80}}></View>
     </>

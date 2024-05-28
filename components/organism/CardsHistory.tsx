@@ -1,8 +1,8 @@
 import React from 'react';
-import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
-import {Divider} from '@rneui/base/dist/Divider/Divider';
-import CardTitle from '../atoms/CardsTitles';
-import { useThemeCustome } from '../shared/theme/ThemeContext';
+import {FlatList, StyleSheet} from 'react-native';
+
+import {useThemeCustome} from '../shared/theme/ThemeContext';
+import HistoryCard from '../molecules/HistoryCard';
 
 const CardHistory = () => {
   const img1 = require('../../assets/carrefour.png');
@@ -43,41 +43,8 @@ const CardHistory = () => {
     image: string;
     id: string;
   }
-  const styles = StyleSheet.create({
-    historyCard: {
-      flexDirection: 'row',
-      height: 69,
-      marginHorizontal: 5,
-      justifyContent: 'space-between',
-      alignItems: 'center',
-    },
-
-    iconNameContainer: {
-      flex: 0.45,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-    },
-    amountSty: {
-      color: themeColors.darkBlue,
-      fontSize: 18,
-      fontWeight: '700',
-    },
-    dateSty: {
-      color: '#B7B7B7',
-      fontSize: 14,
-      fontWeight: '400',
-    },
-    nametSty: {
-      color: themeColors.darkBlue,
-
-      fontSize: 18,
-      fontWeight: '400',
-    },
-  });
   return (
     <>
-      <CardTitle title={'History'} />
       <FlatList
         data={historyCards}
         showsVerticalScrollIndicator={false}
@@ -86,24 +53,7 @@ const CardHistory = () => {
           return item.id;
         }}
         renderItem={itemData => {
-          const imgName = itemData.item.image;
-          // console.log('imgName', imgName);
-
-          return (
-            <>
-              <View style={styles.historyCard}>
-                <View style={styles.iconNameContainer}>
-                  <Image source={itemData.item.image}></Image>
-                  <View>
-                    <Text style={styles.nametSty}>{itemData.item.name}</Text>
-                    <Text style={styles.dateSty}>{itemData.item.date}</Text>
-                  </View>
-                </View>
-                <Text style={styles.amountSty}>{itemData.item.amount}</Text>
-              </View>
-              <Divider />
-            </>
-          );
+          return <HistoryCard image={true} item={itemData.item} />;
         }}
         alwaysBounceVertical={false}
       />

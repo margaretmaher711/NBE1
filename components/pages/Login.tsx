@@ -1,25 +1,20 @@
 import React from 'react';
 import LoginTemplet from '../templets/logintemplet';
-import {Dimensions, ImageBackground, StyleSheet} from 'react-native';
+import {ImageBackground, SafeAreaView} from 'react-native';
 import FooterOrganism from '../organism/footerorganism';
+import {useThemeStyles} from '../shared/theme/ThemeStyles';
+import getStyles from '../styles/LoginStyles';
 function Login(): React.JSX.Element {
   const backgroundImage = '../../assets/loginbackground.png';
+  const styles = useThemeStyles(getStyles);
 
   return (
-    <>
-      <ImageBackground source={require(backgroundImage)} style={styles.image}>
+    <ImageBackground source={require(backgroundImage)} style={styles.image}>
+      <SafeAreaView style={styles.container}>
         <LoginTemplet />
-        <FooterOrganism />
-      </ImageBackground>
-    </>
+      </SafeAreaView>
+      <FooterOrganism />
+    </ImageBackground>
   );
 }
-const styles = StyleSheet.create({
-  image: {
-    height: Dimensions.get('screen').height,
-    flex: 1,
-    justifyContent: 'center',
-    resizeMode: 'cover',
-  },
-});
 export default Login;

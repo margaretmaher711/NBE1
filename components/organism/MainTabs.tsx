@@ -19,7 +19,9 @@ function MainTabs() {
     <Tab.Navigator
       activeColor={themeColors.commonWhite}
       inactiveColor={themeColors.textColor}
+      
       barStyle={{
+        backgroundColor:themeColors.nativThemeContainerBG,
         position: 'absolute',
         overflow: 'hidden',
         borderTopLeftRadius: 20,

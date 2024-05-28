@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
-import {KeyboardAvoidingView, Platform, StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
 
-import {useThemeCustome} from '../shared/theme/ThemeContext';
 import CustomButton from '../atoms/custombutton';
 import SignupTitles from '../molecules/SignupTitles';
 import SignupAppBarOrganism from '../organism/signupappbar';
 import CustomTextInput from '../atoms/CustomTextInput';
 import CustomRoundedCheck from '../molecules/CustomRoundedCheck';
+import {useThemeStyles} from '../shared/theme/ThemeStyles';
+import getStyles from '../styles/SetPassTempletStyles';
 
 function SetPassTemplet({navigation}): React.JSX.Element {
   const passIcon = 'lock-closed-outline';
@@ -18,44 +19,8 @@ function SetPassTemplet({navigation}): React.JSX.Element {
   const [isMinimumLength, setIsMinimumLength] = useState(false);
   const [isValidInput, setIsValidInput] = useState(false);
   const [isMatchedInputs, setMatchedInputs] = useState(false);
-  const {themeColors} = useThemeCustome(); // Access the theme colors
-  const styles = StyleSheet.create({
-    ckeckItemsContainer: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      // flexWrap:'wrap',
-    },
-    contant: {
-      flex: 1,
-      marginHorizontal: 20,
-      marginVertical: 15,
-      backgroundColor: '#F1F3FB',
-    },
-    loginContainer: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'flex-end',
-    },
-    upperCont: {flex: 6},
-    lowerCont: {
-      flex: 0.5,
-      marginBottom: 10,
-      alignItems: 'center',
-      justifyContent: 'space-between',
-    },
+  const styles = useThemeStyles(getStyles);
 
-    containerPad: {
-      marginTop: 15,
-    },
-
-    container: {
-      marginTop: 20,
-    },
-    highlight: {
-      color: themeColors.darkBlue,
-      fontWeight: 'bold',
-    },
-  });
   const validateInput = (inputText: string) => {
     // Example validation rule: input should not be empty
     // const isValidInput = inputText.trim() !== '';
