@@ -2,9 +2,14 @@ import React from 'react';
 import MapView, {Marker} from 'react-native-maps';
 import {useThemeStyles} from '../../shared/theme/ThemeStyles';
 import getStyles from './Styles';
+import { useThemeCustome } from '../../shared/theme/ThemeContext';
+import  {darkMapStyle,lightMapStyle} from './MapStyles';
 
 const Map = () => {
   const styles = useThemeStyles(getStyles);
+  const {isDarkTheme} = useThemeCustome(); 
+  const mapStyle = isDarkTheme ? darkMapStyle : lightMapStyle; 
+
   const markers = [
     {
       latitude: 37.788,
@@ -27,7 +32,10 @@ const Map = () => {
         longitude: -122.4324,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
-      }}>
+      }}
+      customMapStyle={mapStyle} // Apply dark style if dark mode is active
+
+      >
       {markers.map((marker, index) => (
         <Marker
           key={index}
