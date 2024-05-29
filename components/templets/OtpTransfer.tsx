@@ -10,11 +10,11 @@ import {
 
 import CustomButton from '../atoms/custombutton';
 import CustomOtpInput from '../atoms/CustomOtpInput';
-import SignupTitles from '../molecules/SignupTitles';
 import SignupAppBarOrganism from '../organism/signupappbar';
 import {useThemeStyles} from '../shared/theme/ThemeStyles';
 import getStyles from '../styles/OtpTransferTempletStyles';
 import MissionComplete from '../organism/MissionComplete';
+import TitleSubTitle from '../molecules/TitleSubTitle/TitleSubTitle';
 
 function OTPTransfer(): React.JSX.Element {
   const styles = useThemeStyles(getStyles);
@@ -25,7 +25,7 @@ function OTPTransfer(): React.JSX.Element {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <View style={styles.upperCont}>
         <SignupAppBarOrganism />
-        <SignupTitles
+        <TitleSubTitle
           title="Verification"
           subtitle="Enter 5 digit code we sent to +20 101 131 5412"
         />

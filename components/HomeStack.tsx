@@ -1,12 +1,12 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Cards from './pages/Cards';
+import Cards from './pages/Cards/Cards';
 import Transfer from './pages/Transfer';
-import Beneficiaries from './pages/Beneficiaries';
-import Home from './pages/Home';
+import Beneficiaries from './pages/Beneficiaries/Beneficiaries';
+import Home from './pages/Home/Home';
 import OtpTransfer from './pages/OtpTransfer';
 import AddBeneficiaries from './pages/AddBeneficiaries/AddBeneficiaries';
-import BeneficiariesHistory from './pages/BeneficiariesHistory';
+import BeneficiariesHistory from './pages/Beneficiaries/BeneficiariesHistory';
 import ATMs from './pages/ATMs/ATMs';
 import AirPay from './pages/AirPay/AirPay';
 

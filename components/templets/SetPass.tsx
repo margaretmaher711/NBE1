@@ -2,12 +2,12 @@ import React, {useState} from 'react';
 import {View} from 'react-native';
 
 import CustomButton from '../atoms/custombutton';
-import SignupTitles from '../molecules/SignupTitles';
 import SignupAppBarOrganism from '../organism/signupappbar';
 import CustomTextInput from '../atoms/CustomTextInput';
 import CustomRoundedCheck from '../molecules/CustomRoundedCheck';
 import {useThemeStyles} from '../shared/theme/ThemeStyles';
 import getStyles from '../styles/SetPassTempletStyles';
+import TitleSubTitle from '../molecules/TitleSubTitle/TitleSubTitle';
 
 function SetPassTemplet({navigation}): React.JSX.Element {
   const passIcon = 'lock-closed-outline';
@@ -55,7 +55,7 @@ function SetPassTemplet({navigation}): React.JSX.Element {
     <>
       <View style={styles.upperCont}>
         <SignupAppBarOrganism />
-        <SignupTitles
+        <TitleSubTitle
           title="Set your password"
           subtitle="Enter a strong password for your online banking account"
         />

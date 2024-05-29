@@ -1,7 +1,7 @@
 import React from 'react';
 import {SafeAreaView, View} from 'react-native';
 
-import AddBeneficiariesTemplet from '../../templets/AddBeneficiaries';
+import AddBeneficiariesTemplet from '../../templets/Beneficiaries/AddBeneficiariesTemp/AddBeneficiaries';
 import {useThemeStyles} from '../../shared/theme/ThemeStyles';
 import getStyles from './Styles';
 

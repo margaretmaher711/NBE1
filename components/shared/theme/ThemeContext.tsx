@@ -1,4 +1,3 @@
-// ThemeContext.js
 import React, {createContext, useContext, useState} from 'react';
 import colors from '../../styles/colors';
 

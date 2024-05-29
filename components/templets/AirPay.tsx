@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {StyleSheet, PanResponder, Animated, View, Text} from 'react-native';
-import HomeAppBar from '../organism/HomeAppBar';
 import CreditCardItem from '../molecules/CreditCardItem';
+import AppBarPrim from '../organism/AppBar/AppBarPrim';
 
 const DragAndDropCard = () => {
   // Create a ref to store the position of the card
@@ -95,7 +95,7 @@ const DragAndDropCard = () => {
 function AirPayTemplet({navigation}) {
   return (
     <>
-      <HomeAppBar navigation={navigation} />
+      <AppBarPrim navigation={navigation} />
       <DragAndDropCard />
     </>
   );

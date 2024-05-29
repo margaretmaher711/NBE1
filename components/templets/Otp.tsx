@@ -8,10 +8,10 @@ import {
 
 import CustomButton from '../atoms/custombutton';
 import CustomOtpInput from '../atoms/CustomOtpInput';
-import SignupTitles from '../molecules/SignupTitles';
 import SignupAppBarOrganism from '../organism/signupappbar';
 import { useThemeStyles } from '../shared/theme/ThemeStyles';
 import getStyles from '../styles/OtpTempletStyles';
+import TitleSubTitle from '../molecules/TitleSubTitle/TitleSubTitle';
 
 function OTPTemplet({navigation}): React.JSX.Element {
   const [otp, setOtp] = useState('');
@@ -24,7 +24,7 @@ function OTPTemplet({navigation}): React.JSX.Element {
       <View style={styles.upperCont}>
         <SignupAppBarOrganism />
 
-        <SignupTitles
+        <TitleSubTitle
           title="Verification"
           subtitle="Enter 5 digit code we sent to +20 101 131 5412"
         />

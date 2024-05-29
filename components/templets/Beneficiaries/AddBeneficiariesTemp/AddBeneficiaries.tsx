@@ -1,7 +1,7 @@
 import React from 'react';
 
-import SignupAppBarOrganism from '../organism/signupappbar';
-import AddBeneficiaryForm from '../organism/AddBeneficiary/AddBeneficiaryForm';
+import SignupAppBarOrganism from '../../../organism/signupappbar';
+import AddBeneficiaryForm from '../../../organism/AddBeneficiary/AddBeneficiaryForm';
 
 function AddBeneficiariesTemplet({navigation}): React.JSX.Element {
 

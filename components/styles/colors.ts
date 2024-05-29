@@ -7,6 +7,10 @@ const commonColor = {
     subTitleColor: '#808080',
     milkBG: '#F1F3FB',
     redColor: 'red',
+    mintGreen:'#00C97426',
+    babyBlue:'#00ADF826',
+    lightOrange:'#F6A72126',
+    lightRed:'#FF002E26'
 };
 
 const light = {

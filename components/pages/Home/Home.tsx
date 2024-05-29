@@ -1,8 +1,8 @@
 import React from 'react';
 import {SafeAreaView, View} from 'react-native';
-import HomeTemplet from '../templets/Home';
-import {useThemeStyles} from '../shared/theme/ThemeStyles';
-import getStyles from '../styles/PageStyles';
+import HomeTemplet from '../../templets/Home';
+import {useThemeStyles} from '../../shared/theme/ThemeStyles';
+import getStyles from '../../styles/PageStyles';
 
 function Home({navigation}): React.JSX.Element {
   const styles = useThemeStyles(getStyles);

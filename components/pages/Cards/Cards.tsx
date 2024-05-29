@@ -1,8 +1,8 @@
 import React from 'react';
 import {SafeAreaView, View} from 'react-native';
-import CardsTemplet from '../templets/Card';
-import {useThemeStyles} from '../shared/theme/ThemeStyles';
-import getStyles from '../styles/PageStyles';
+import CardsTemplet from '../../templets/Card/Card';
+import {useThemeStyles} from '../../shared/theme/ThemeStyles';
+import getStyles from '../../styles/PageStyles';
 
 function Cards({navigation}): React.JSX.Element {
   const styles = useThemeStyles(getStyles);

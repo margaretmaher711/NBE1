@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import Beneficiaries from '../pages/Beneficiaries';
+import Beneficiaries from '../pages/Beneficiaries/Beneficiaries';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {CustomDrawerContent} from '../molecules/CustomDrawerContent';
 import MainTabs from './MainTabs';
