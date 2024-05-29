@@ -12,12 +12,13 @@ const BalanceCard: React.FC<Props> = ({balanceVal}) => {
 
   return (
     <View>
-      <ImageBackground source={balanceBg} style={styles.balanceBg}>
+      <ImageBackground
+        source={balanceBg}
+        style={styles.balanceBg}
+        borderRadius={20}>
         <View style={styles.balnceFingerRowContainer}>
           <Text style={styles.balanceText}>Balance</Text>
-          <Image
-            source={fingerPrint}
-            style={styles.fingerPrintImg}></Image>
+          <Image source={fingerPrint} style={styles.fingerPrintImg}></Image>
         </View>
         <Text style={styles.balanceValText}>{balanceVal}</Text>
       </ImageBackground>

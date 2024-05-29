@@ -29,13 +29,13 @@ const DropDown: React.FC<Props> = ({
   const styles = StyleSheet.create({
     dropdownContainer: {
       gap: 5,
-      backgroundColor: themeColors.themeColor,
+      backgroundColor: themeColors.nativThemeContainerBG,
       borderWidth: 0,
 
       elevation: 0,
     },
     dropdown: {
-      backgroundColor: themeColors.themeColor,
+      backgroundColor: themeColors.nativThemeContainerBG,
       borderWidth: 0,
     },
     dropdownLabel: {
@@ -52,7 +52,8 @@ const DropDown: React.FC<Props> = ({
       borderColor: themeColors.borderColor,
       elevation: 4,
       marginBottom: 10,
-      backgroundColor: themeColors.themeColor,
+      backgroundColor: themeColors.nativThemeContainerBG,
+      shadowRadius:20,
       zIndex: zIndex,
     },
     itemLabel: {

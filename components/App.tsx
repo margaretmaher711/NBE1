@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React, { useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { AuthStack } from './AuthStack';
-import { HoomeDrawer } from './organism/HomeDrawer';
+import { HoomeDrawer } from './organism/HomeDrawer/HomeDrawer';
 import Splash from './pages/SplashPage';
 import { ThemeProvider } from './shared/theme/ThemeContext';
 import { AuthProvider, useAuth } from './shared/auth/AuthContext '; // Ensure the correct path

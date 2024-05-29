@@ -33,7 +33,7 @@ const BeneficiaryListItem: React.FC<Props> = ({item}) => {
       shadowRadius: 18,
       flexDirection: 'row',
       height: 86,
-      backgroundColor: themeColors.themeColor,
+      backgroundColor: themeColors.nativThemeContainerBG,
       borderColor: themeColors.borderColor,
       borderWidth: 1,
       borderRadius: 18,

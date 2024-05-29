@@ -7,14 +7,14 @@ const commonColor = {
     subTitleColor: '#808080',
     milkBG: '#F1F3FB',
     redColor: 'red',
-    mintGreen:'#00C97426',
-    babyBlue:'#00ADF826',
-    lightOrange:'#F6A72126',
-    lightRed:'#FF002E26'
+    mintGreen: '#00C97426',
+    babyBlue: '#00ADF826',
+    lightOrange: '#F6A72126',
+    lightRed: '#FF002E26'
 };
 
 const light = {
-    themeColor: '#FFFFFF',
+    themeColor: '#F1F3FB',
     textColor: '#000000',
     sky: '#DE5E69',
     grayBG: 'rgba(27, 27, 27, 0.2)',

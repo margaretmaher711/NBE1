@@ -35,9 +35,10 @@ const CustomTextInput: React.FC<{
       marginVertical: 15,
 
       elevation: 4,
-      shadowRadius: 10,
+      shadowRadius: 20,
       flexDirection: 'row',
-      backgroundColor: themeColors.themeColor,
+      backgroundColor: themeColors.nativThemeContainerBG,
+      
       borderRadius: 10,
       height: 70,
       color: '#000',

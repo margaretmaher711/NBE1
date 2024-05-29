@@ -12,8 +12,8 @@ import CustomContainer from '../atoms/CustomContainer';
 import CustomSwitch from '../atoms/Switch';
 import FinishSignupAppBar from './FinishSignup';
 import {useThemeCustome} from '../shared/theme/ThemeContext';
-import { ScrollView } from 'react-native-gesture-handler';
-import { useAuth } from '../shared/auth/AuthContext ';
+import {ScrollView} from 'react-native-gesture-handler';
+import {useAuth} from '../shared/auth/AuthContext ';
 
 // const Drawer = createDrawerNavigator();
 
@@ -57,7 +57,7 @@ export function CustomDrawerContent(props) {
       fontSize: 14,
       fontWeight: '700',
       lineHeight: 16.41,
-     color: themeColors.darkBlue,
+      color: themeColors.darkBlue,
     },
     greyText: {
       fontSize: 12,
@@ -77,7 +77,7 @@ export function CustomDrawerContent(props) {
     drawerLabelStyle: {
       fontSize: 16,
       fontWeight: 'bold',
-      color:themeColors.textColor
+      color: themeColors.textColor,
     },
     switchContainer: {
       flexDirection: 'row',
@@ -103,7 +103,7 @@ export function CustomDrawerContent(props) {
       borderTopRightRadius: 40,
     },
   });
-  const { logout } = useAuth();
+  const {logout} = useAuth();
 
   const handleLogout = () => {
     logout();
@@ -114,54 +114,56 @@ export function CustomDrawerContent(props) {
       {...props}
       style={styles.drawerContent}
       contentContainerStyle={styles.contentContainer}>
-    <ScrollView>
-    <View>
-        <View style={styles.appBar}>
-          <FinishSignupAppBar
-            bankNameImage={bankNameImage}
-            appLogoImage={appLogoImage}
-          />
-          <CustomContainer title={'AR'} />
-        </View>
+      <ScrollView>
+        <View>
+          <View style={styles.appBar}>
+            <FinishSignupAppBar
+              bankNameImage={bankNameImage}
+              appLogoImage={appLogoImage}
+            />
+            <CustomContainer title={'AR'} onPressed={() => null} />
+          </View>
 
-        <DrawerItemList {...props} />
-        <View style={styles.switchContainer}>
-          <View style={styles.switchRow}>
-            <View style={styles.iconContainer}>
-              <Icon name="moon" size={18} color="#000" />
+          <DrawerItemList {...props} />
+          <View style={styles.switchContainer}>
+            <View style={styles.switchRow}>
+              <View style={styles.iconContainer}>
+                <Icon name="moon" size={18} color="#000" />
+              </View>
+              <Text style={[styles.drawerLabelStyle]}>Dark Mode</Text>
             </View>
-            <Text style={[styles.drawerLabelStyle, ]}>
-              Dark Mode
-            </Text>
+            <CustomSwitch />
           </View>
-          <CustomSwitch />
         </View>
-      </View>
-      <View style={{gap: 15}}>
-        <TouchableOpacity onPress={handleLogout}>
-        <View style={styles.logoutContainer}>
-          <View
-            style={[
-              styles.iconContainer,
-              {backgroundColor: 'rgba(225, 7, 33, 0.2)'},
-            ]}>
-            <Icon name="power" size={20} color="#EB001B" />
+        <View style={{gap: 15}}>
+          <TouchableOpacity onPress={handleLogout}>
+            <View style={styles.logoutContainer}>
+              <View
+                style={[
+                  styles.iconContainer,
+                  {backgroundColor: 'rgba(225, 7, 33, 0.2)'},
+                ]}>
+                <Icon name="power" size={20} color="#EB001B" />
+              </View>
+              <Text style={[styles.drawerLabelStyle, {color: '#EB001B'}]}>
+                Log Out
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <View style={styles.sendMoneyCardList}>
+            <Image source={userProf} style={styles.logoListImage} />
+            <View>
+              <Text style={styles.nameText}>Ahmad Sami</Text>
+              <Text style={styles.greyText}>+20 101 131 5412</Text>
+            </View>
+            <Icon
+              name="ellipsis-vertical"
+              size={20}
+              style={{paddingLeft: 24}}
+            />
           </View>
-          <Text style={[styles.drawerLabelStyle, {color: '#EB001B'}]}>
-            Log Out
-          </Text>
         </View>
-        </TouchableOpacity>
-        <View style={styles.sendMoneyCardList}>
-          <Image source={userProf} style={styles.logoListImage} />
-          <View>
-            <Text style={styles.nameText}>Ahmad Sami</Text>
-            <Text style={styles.greyText}>+20 101 131 5412</Text>
-          </View>
-          <Icon name="ellipsis-vertical" size={20} style={{paddingLeft: 24}} />
-        </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
     </DrawerContentScrollView>
   );
 }

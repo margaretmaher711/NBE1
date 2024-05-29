@@ -6,7 +6,7 @@ import ATMs from '../pages/ATMs/ATMs';
 import {useThemeCustome} from '../shared/theme/ThemeContext';
 import {HomeStack} from '../HomeStack';
 import {useTheme} from 'react-native-paper';
-import BottomTap from '../molecules/BottomTap';
+import BottomTab from '../molecules/BottomTap';
 import AirPay from '../pages/AirPay/AirPay';
 
 const Tab = createMaterialBottomTabNavigator();
@@ -37,7 +37,7 @@ function MainTabs() {
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({focused}) => (
-            <BottomTap
+            <BottomTab
               focused={focused}
               focusedImg={require('../../assets/whitHome.png')}
               unFocusedImg={require('../../assets/Home.png')}
@@ -51,7 +51,7 @@ function MainTabs() {
         options={{
           tabBarLabel: 'Transfer',
           tabBarIcon: ({focused}) => (
-            <BottomTap
+            <BottomTab
               focused={focused}
               unFocusedImg={require('../../assets/TransferIcon.png')}
               focusedImg={require('../../assets/whitTransfer.png')}
@@ -65,7 +65,7 @@ function MainTabs() {
         options={{
           tabBarLabel: 'Beneficiaries',
           tabBarIcon: ({focused}) => (
-            <BottomTap
+            <BottomTab
               focused={focused}
               unFocusedImg={require('../../assets/BeneficiariesIcon.png')}
               focusedImg={require('../../assets/whitBenf.png')}
@@ -79,7 +79,7 @@ function MainTabs() {
         options={{
           tabBarLabel: 'ATMs',
           tabBarIcon: ({focused}) => (
-            <BottomTap
+            <BottomTab
               focused={focused}
               unFocusedImg={require('../../assets/ATMsIcon.png')}
               focusedImg={require('../../assets/whiteATMs.png')}
@@ -93,7 +93,7 @@ function MainTabs() {
         options={{
           tabBarLabel: 'Air Pay',
           tabBarIcon: ({focused}) => (
-            <BottomTap
+            <BottomTab
               focused={focused}
               unFocusedImg={require('../../assets/AirPayIcon.png')}
               focusedImg={require('../../assets/whitAirPay.png')}

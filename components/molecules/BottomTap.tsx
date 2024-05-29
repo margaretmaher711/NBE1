@@ -7,7 +7,7 @@ interface Props {
   focused: boolean;
 }
 
-const BottomTap: React.FC<Props> = ({
+const BottomTab: React.FC<Props> = ({
   unFocusedImg,
   focusedImg,
   focused = false,
@@ -38,4 +38,4 @@ const BottomTap: React.FC<Props> = ({
   );
 };
 
-export default BottomTap;
+export default BottomTab;

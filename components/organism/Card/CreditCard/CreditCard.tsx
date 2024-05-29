@@ -1,7 +1,7 @@
 import React from 'react';
 import {FlatList, View} from 'react-native';
 
-import CreditCard from '../../../molecules/CreditCardItem';
+import CreditCardItem from '../../../molecules/CreditCardItem';
 import {cardsList} from './Data';
 const HomeCards = () => {
   return (
@@ -17,7 +17,7 @@ const HomeCards = () => {
         renderItem={itemData => {
           return (
             <>
-              <CreditCard creditCardVal={itemData.item.amount} />
+              <CreditCardItem creditCardVal={itemData.item.amount} />
               <View style={{width: 20}}></View>
             </>
           );

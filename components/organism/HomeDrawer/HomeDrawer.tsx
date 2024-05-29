@@ -1,44 +1,20 @@
 import * as React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import Beneficiaries from '../pages/Beneficiaries/Beneficiaries';
+import Beneficiaries from '../../pages/Beneficiaries/Beneficiaries';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {CustomDrawerContent} from '../molecules/CustomDrawerContent';
-import MainTabs from './MainTabs';
-import {useThemeCustome} from '../shared/theme/ThemeContext';
+import {CustomDrawerContent} from '../../molecules/CustomDrawerContent';
+import MainTabs from '../MainTabs';
+import {useThemeCustome} from '../../shared/theme/ThemeContext';
+import {useThemeStyles} from '../../shared/theme/ThemeStyles';
+import getStyles from './Styles';
 
 const Drawer = createDrawerNavigator();
 
 export function HoomeDrawer() {
   const {themeColors} = useThemeCustome(); // Access the theme colors
-  const styles = StyleSheet.create({
-    iconContainer: {
-      width: 33,
-      height: 33,
-      backgroundColor: themeColors.grayBG,
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderRadius: 12,
-      margin: 0,
-      padding: 0,
-      
-    },
+  const styles = useThemeStyles(getStyles);
 
-    drawerLabelStyle: {
-      fontSize: 16,
-      fontWeight: 'bold',
-    },
-    drawerItemStyle: {
-      borderRadius: 12,
-    },
-    drawerStyle: {
-      borderBottomRightRadius: 40,
-      borderTopRightRadius: 40,
-    },
-    container: {
-      flex: 1,
-    },
-  });
   return (
     <Drawer.Navigator
       initialRouteName="Home"
@@ -54,8 +30,7 @@ export function HoomeDrawer() {
         drawerActiveBackgroundColor: themeColors.boxActiveColor,
         drawerItemStyle: styles.drawerItemStyle,
       }}
-      drawerContent={props => <CustomDrawerContent {...props} />}
-      >
+      drawerContent={props => <CustomDrawerContent {...props} />}>
       <Drawer.Screen
         name="Home"
         component={MainTabs}
@@ -68,12 +43,21 @@ export function HoomeDrawer() {
         component={Beneficiaries}
         options={{
           drawerLabel: 'Account Summary',
+          drawerIcon: function ({focused, size}) {
+            console.log('foc', focused);
 
-          drawerIcon: ({focused, size}) => (
-            <View style={styles.iconContainer}>
-              <Icon name="file-tray-stacked" size={18} color={'#000'} />
-            </View>
-          ),
+            return (
+              <View style={styles.iconContainer}>
+                <Icon
+                  name="file-tray-stacked"
+                  size={18}
+                  color={
+                    focused ? themeColors.themeColor : themeColors.commonBlack
+                  }
+                />
+              </View>
+            );
+          },
         }}
       />
       <Drawer.Screen
@@ -83,7 +67,13 @@ export function HoomeDrawer() {
           drawerLabel: 'Open Certificates & Deposits',
           drawerIcon: ({focused, size}) => (
             <View style={styles.iconContainer}>
-              <Icon name="document" size={18} color={'#000'} />
+              <Icon
+                name="document"
+                size={18}
+                color={
+                  focused ? themeColors.themeColor : themeColors.commonBlack
+                }
+              />
             </View>
           ),
         }}
@@ -95,7 +85,13 @@ export function HoomeDrawer() {
           drawerLabel: 'Payement Services',
           drawerIcon: ({focused, size}) => (
             <View style={styles.iconContainer}>
-              <Icon name="card" size={18} color={'#000'} />
+              <Icon
+                name="card"
+                size={18}
+                color={
+                  focused ? themeColors.themeColor : themeColors.commonBlack
+                }
+              />
             </View>
           ),
         }}
@@ -107,7 +103,13 @@ export function HoomeDrawer() {
           drawerLabel: 'Cards Services',
           drawerIcon: ({focused, size}) => (
             <View style={styles.iconContainer}>
-              <Icon name="card-outline" size={18} color={'#000'} />
+              <Icon
+                name="card-outline"
+                size={18}
+                color={
+                  focused ? themeColors.themeColor : themeColors.commonBlack
+                }
+              />
             </View>
           ),
         }}
@@ -119,7 +121,13 @@ export function HoomeDrawer() {
           drawerLabel: 'Hard Token',
           drawerIcon: ({focused, size}) => (
             <View style={styles.iconContainer}>
-              <Icon name="key" size={18} color={'#000'} />
+              <Icon
+                name="key"
+                size={18}
+                color={
+                  focused ? themeColors.themeColor : themeColors.commonBlack
+                }
+              />
             </View>
           ),
         }}
@@ -131,7 +139,13 @@ export function HoomeDrawer() {
           drawerLabel: 'Offers',
           drawerIcon: ({focused, size}) => (
             <View style={styles.iconContainer}>
-              <Icon name="pricetag" size={18} color={'#000'} />
+              <Icon
+                name="pricetag"
+                size={18}
+                color={
+                  focused ? themeColors.themeColor : themeColors.commonBlack
+                }
+              />
             </View>
           ),
         }}
@@ -143,7 +157,13 @@ export function HoomeDrawer() {
           drawerLabel: 'Customer Services',
           drawerIcon: ({focused, size}) => (
             <View style={styles.iconContainer}>
-              <Icon name="people" size={18} color={'#000'} />
+              <Icon
+                name="people"
+                size={18}
+                color={
+                  focused ? themeColors.themeColor : themeColors.commonBlack
+                }
+              />
             </View>
           ),
         }}
@@ -155,7 +175,13 @@ export function HoomeDrawer() {
           drawerLabel: 'Calculators',
           drawerIcon: ({focused, size}) => (
             <View style={styles.iconContainer}>
-              <Icon name="calculator" size={18} color={'#000'} />
+              <Icon
+                name="calculator"
+                size={18}
+                color={
+                  focused ? themeColors.themeColor : themeColors.commonBlack
+                }
+              />
             </View>
           ),
         }}
