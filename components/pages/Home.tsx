@@ -1,27 +1,11 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
-
+import {SafeAreaView, View} from 'react-native';
 import HomeTemplet from '../templets/Home';
-import {useThemeCustome} from '../shared/theme/ThemeContext';
+import {useThemeStyles} from '../shared/theme/ThemeStyles';
+import getStyles from '../styles/PageStyles';
 
 function Home({navigation}): React.JSX.Element {
-  const {themeColors} = useThemeCustome(); // Access the theme colors
-  const styles = StyleSheet.create({
-    contant: {
-      marginHorizontal: 20,
-      flex: 1,
-      marginVertical: 15,
-    },
-    screenContainer: {
-      backgroundColor: themeColors.themeColor,
-      flex: 1,
-    },
-    bottomNavIcon: {
-      width: 25,
-      height: 25,
-      resizeMode: 'contain',
-    },
-  });
+  const styles = useThemeStyles(getStyles);
   return (
     <SafeAreaView style={styles.screenContainer}>
       <View style={styles.contant}>

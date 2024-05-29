@@ -3,13 +3,11 @@ import {SafeAreaView, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import SetPassTemplet from '../templets/SetPass';
 import {useThemeStyles} from '../shared/theme/ThemeStyles';
-import getStyles from '../styles/OtpStyles';
+import getStyles from '../styles/PageStyles';
 
 function SetPass(): React.JSX.Element {
   const navigation = useNavigation();
-
   const styles = useThemeStyles(getStyles);
-
   return (
     <SafeAreaView style={styles.screenContainer}>
       <View style={styles.contant}>

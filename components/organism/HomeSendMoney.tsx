@@ -1,12 +1,10 @@
 import React from 'react';
 import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
-import HomeTitle from '../atoms/HomeTitle';
-import {useThemeCustome} from '../shared/theme/ThemeContext';
+import HomeTitle from '../molecules/TitleViewAll/TitleViewAll';
 
 const HomeSendMoney = () => {
   const img1 = require('../../assets/halaImg.png');
   const img2 = require('../../assets/aymanImg.png');
-  const {themeColors} = useThemeCustome(); // Access the theme colors
 
   const sendMoneyCards = [
     {name: 'Hala', id: '1', image: img1},
@@ -24,7 +22,7 @@ const HomeSendMoney = () => {
       alignItems: 'center',
     },
     sendMoneyContainer: {
-      marginVertical: 30,
+      marginTop: 15,
     },
     logoImage: {
       width: 34,

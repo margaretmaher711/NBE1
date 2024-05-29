@@ -1,18 +1,14 @@
 import React from 'react';
-import {
-  KeyboardAvoidingView,
-  Platform,
-  Text,
-  View,
-} from 'react-native';
+import {KeyboardAvoidingView, Platform, Text, View} from 'react-native';
 
 import {useThemeCustome} from '../shared/theme/ThemeContext';
 import CustomButton from '../atoms/custombutton';
 import SignupTitles from '../molecules/SignupTitles';
 import SignupAppBarOrganism from '../organism/signupappbar';
 import CustomTextInput from '../atoms/CustomTextInput';
-import { useThemeStyles } from '../shared/theme/ThemeStyles';
+import {useThemeStyles} from '../shared/theme/ThemeStyles';
 import getStyles from '../styles/SignupTempletStyles';
+import HighlightText from '../atoms/Text/HighlightText/HighLightText';
 
 function SignupTemplet({navigation}): React.JSX.Element {
   const {themeColors} = useThemeCustome(); // Access the theme colors
@@ -48,9 +44,8 @@ function SignupTemplet({navigation}): React.JSX.Element {
               color: themeColors.darkBlue,
             }}>
             By signing up, you agree to our{' '}
-            <Text style={styles.highlight}>Terms of Service</Text> and
-            acknowledge that you have read our{' '}
-            <Text style={styles.highlight}>Privacy Policy</Text>.
+            <HighlightText title={'Terms of Service'} /> and acknowledge that
+            you have read our <HighlightText title={'Privacy Policy'} />.
           </Text>
         </View>
       </View>

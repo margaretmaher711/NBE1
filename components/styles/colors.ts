@@ -1,6 +1,7 @@
 const commonColor = {
     commonWhite: '#FFFFFF',
     commonBlack: '#000000',
+    commonOpacityBG: '#00000fc0',
     activeColor: '#fff',
     boxActiveColor: '#007236',
     subTitleColor: '#808080',

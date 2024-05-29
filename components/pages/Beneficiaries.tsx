@@ -1,23 +1,13 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
+import {SafeAreaView, View} from 'react-native';
 
 import BeneficiariesTemplet from '../templets/Beneficiaries';
-import {useThemeCustome} from '../shared/theme/ThemeContext';
+import {useThemeStyles} from '../shared/theme/ThemeStyles';
+import getStyles from '../styles/PageStyles';
 
 function Beneficiaries({navigation}): React.JSX.Element {
-  const {themeColors} = useThemeCustome();
+  const styles = useThemeStyles(getStyles);
 
-  const styles = StyleSheet.create({
-    contant: {
-      marginHorizontal: 20,
-      flex: 1,
-      marginVertical: 15,
-    },
-    screenContainer: {
-      backgroundColor: themeColors.themeColor,
-      flex: 1,
-    },
-  });
   return (
     <SafeAreaView style={styles.screenContainer}>
       <View style={styles.contant}>

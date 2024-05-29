@@ -1,25 +1,24 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
-// import {IoIosArrowBack} from 'react-icons/io';
-// import Icon from 'react-native-vector-icons/FontAwesome';
+import {Image, View} from 'react-native';
+
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import {TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import {useThemeStyles} from '../shared/theme/ThemeStyles';
+import getStyles from '../styles/AppBarDefaultStyles';
 const appLogoImage = '../../assets/app-icon.png';
 const bankNameImage = '../../assets/bank-ahly.png';
 
 const SignupAppBarOrganism = () => {
   const navigation = useNavigation();
+  const styles = useThemeStyles(getStyles);
 
   return (
     <View style={styles.appBar}>
       <View style={styles.langContainer}>
-        {/* <Text style={styles.langText}>AR</Text> */}
-        {/* <IoIosArrowBack /> */}
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Icon name="arrow-back-circle-outline" size={24} color="#fff" />
-          {/* <Icon name="arrow-circle-left" size={24} color="#fff" /> */}
         </TouchableOpacity>
       </View>
       <View style={{flexDirection: 'row'}}>
@@ -32,32 +31,4 @@ const SignupAppBarOrganism = () => {
     </View>
   );
 };
-const styles = StyleSheet.create({
-  appBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    backgroundColor: 'transparent',
-  },
-  logoImage: {
-    width: 34,
-    height: 38,
-  },
-  bankLogoImage: {
-    width: 122,
-    height: 37,
-  },
-  langContainer: {
-    width: 42,
-    height: 40,
-    backgroundColor: '#007236',
-    borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  langText: {
-    fontSize: 16,
-    fontWeight: '700',
-    color: '#007236',
-  },
-});
 export default SignupAppBarOrganism;

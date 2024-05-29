@@ -1,9 +1,9 @@
 import React from 'react';
 import {SafeAreaView, View} from 'react-native';
 
-import AddBeneficiariesTemplet from '../templets/AddBeneficiaries';
-import {useThemeStyles} from '../shared/theme/ThemeStyles';
-import getStyles from '../styles/AddBeneficiariesStyles';
+import AddBeneficiariesTemplet from '../../templets/AddBeneficiaries';
+import {useThemeStyles} from '../../shared/theme/ThemeStyles';
+import getStyles from './Styles';
 
 function AddBeneficiaries({navigation}): React.JSX.Element {
   const styles = useThemeStyles(getStyles);

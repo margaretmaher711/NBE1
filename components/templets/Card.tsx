@@ -2,14 +2,14 @@ import React from 'react';
 import HomeAppBar from '../organism/HomeAppBar';
 import CardHistory from '../organism/CardsHistory';
 import CreditCardHomeCards from '../organism/CreditCard';
-import CardTitle from '../atoms/CardsTitles';
+import Title from '../atoms/Text/Title/Title';
 function CardsTemplet({navigation}): React.JSX.Element {
   return (
     <>
       <HomeAppBar navigation={navigation} />
-      <CardTitle title={'Cards'} />
+      <Title title={'Cards'} />
       <CreditCardHomeCards />
-      <CardTitle title={'History'} />
+      <Title title={'History'} />
       <CardHistory />
     </>
   );

@@ -4,7 +4,7 @@ import HomeAppBar from '../organism/HomeAppBar';
 import HomeCards from '../organism/HomeCards';
 import HomeHistory from '../organism/HomeHistory';
 import HomeSendMoney from '../organism/HomeSendMoney';
-import HomeTitle from '../atoms/HomeTitle';
+import HomeTitle from '../molecules/TitleViewAll/TitleViewAll';
 
 function HomeTemplet({navigation}): React.JSX.Element {
   return (

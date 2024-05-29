@@ -1,11 +1,11 @@
 import React from 'react';
 import SignUpMessageOrganism from '../organism/signupmessageorg';
 import LoginButtonOrganism from '../organism/loginbuttonorg';
-import CheckBoxOrganism from '../organism/checkboxorg';
 import DarkFillFeild from '../atoms/darktransparentfeild';
 import LoginAppBarOrganism from '../organism/loginappbarorg';
 import WelcomText from '../atoms/welcomtxt';
 import CustomTextInput from '../atoms/CustomTextInput';
+import CheckBox from '../molecules/CheckBox/CheckBox';
 function LoginTemplet(): React.JSX.Element {
   const lockIcon = 'lock-closed-outline';
 
@@ -19,7 +19,7 @@ function LoginTemplet(): React.JSX.Element {
         validateInput={() => {}}
         prefixIcon={lockIcon}
       />
-      <CheckBoxOrganism />
+      <CheckBox />
       <LoginButtonOrganism />
       <SignUpMessageOrganism />
     </>

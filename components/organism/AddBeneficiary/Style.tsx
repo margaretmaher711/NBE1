@@ -70,17 +70,7 @@ const getStyles = themeColors =>
       borderRadius: 10,
       color: themeColors.commonBlack,
     },
-    camiraContainer: {
-      // flex:0.5,
-      height: 138,
-      width: 138,
-      backgroundColor: themeColors.commonWhite,
-      justifyContent: 'center',
-      alignItems: 'center',
-      elevation: 4,
-      borderRadius: 30,
-      // textAlign: 'center',
-    },
+   
   });
 
 export default getStyles;

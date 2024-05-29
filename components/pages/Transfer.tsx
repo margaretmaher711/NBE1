@@ -1,10 +1,8 @@
 import React from 'react';
-import {
-  SafeAreaView,
-} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import getStyles from '../styles/TransferStyles';
-import { useThemeStyles } from '../shared/theme/ThemeStyles';
+import {useThemeStyles} from '../shared/theme/ThemeStyles';
 import TransferTemplet from '../templets/Transfer';
 
 function Transfer() {
@@ -12,12 +10,9 @@ function Transfer() {
 
   const styles = useThemeStyles(getStyles);
 
-  
- 
-
   return (
     <SafeAreaView style={styles.container}>
-     <TransferTemplet navigation={navigation}/>
+      <TransferTemplet navigation={navigation} />
     </SafeAreaView>
   );
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 
 import HomeAppBar from '../organism/HomeAppBar';
-import EmptyBeneficiaries from '../organism/EmptyScreen';
+import EmptyBeneficiaries from '../organism/NoItems/NoItem';
 import BeneficiaryListItem from '../molecules/BeneficiaryListItem';
-import CardTitle from '../atoms/CardsTitles';
 import {View} from 'react-native';
 import {useRoute} from '@react-navigation/native';
 import TransactionHistory from '../organism/TransactionHistory';
+import Title from '../atoms/Text/Title/Title';
 
 function BeneficiariesHistoryTemplet({navigation}): React.JSX.Element {
   const route = useRoute();
@@ -87,7 +87,7 @@ function BeneficiariesHistoryTemplet({navigation}): React.JSX.Element {
     <>
       <HomeAppBar navigation={navigation} />
       <BeneficiaryListItem item={userCard} />
-      <CardTitle title={'Transactions History'} />
+      <Title title={'Transactions History'} />
       {beneficiariesHistory.length == 0 && (
         <EmptyBeneficiaries
           title={'No History'}

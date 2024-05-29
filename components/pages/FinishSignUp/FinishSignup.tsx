@@ -1,13 +1,10 @@
 import React from 'react';
-import {
-  ImageBackground,
-  View,
-} from 'react-native';
-import FinishSignupTemplet from '../templets/FinishSignup';
-import { useThemeStyles } from '../shared/theme/ThemeStyles';
-import getStyles from '../styles/FinishSignupStyles';
+import {ImageBackground, View} from 'react-native';
+import FinishSignupTemplet from '../../templets/FinishSignup';
+import {useThemeStyles} from '../../shared/theme/ThemeStyles';
+import getStyles from './Styles';
 function FinishSignup(): React.JSX.Element {
-  const backgroundImage = '../../assets/finishsignup.png';
+  const backgroundImage = '../../../assets/finishsignup.png';
   const styles = useThemeStyles(getStyles);
 
   return (

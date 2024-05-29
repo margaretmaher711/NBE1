@@ -2,12 +2,12 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 import React from 'react';
 import Transfer from '../pages/Transfer';
 import Beneficiaries from '../pages/Beneficiaries';
-import AirPay from '../pages/AirPay';
-import ATMs from '../pages/ATMs';
+import ATMs from '../pages/ATMs/ATMs';
 import {useThemeCustome} from '../shared/theme/ThemeContext';
 import {HomeStack} from '../HomeStack';
 import {useTheme} from 'react-native-paper';
 import BottomTap from '../molecules/BottomTap';
+import AirPay from '../pages/AirPay/AirPay';
 
 const Tab = createMaterialBottomTabNavigator();
 

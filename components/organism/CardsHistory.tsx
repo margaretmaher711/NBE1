@@ -1,7 +1,6 @@
 import React from 'react';
 import {FlatList, StyleSheet} from 'react-native';
 
-import {useThemeCustome} from '../shared/theme/ThemeContext';
 import HistoryCard from '../molecules/HistoryCard';
 
 const CardHistory = () => {
@@ -9,7 +8,6 @@ const CardHistory = () => {
   const img2 = require('../../assets/anazon.png');
   const img3 = require('../../assets/jumia.png');
   const img4 = require('../../assets/halaImg.png');
-  const {themeColors} = useThemeCustome();
   const historyCards: ArrayLike<historyList> = [
     {
       name: 'Carrefour',

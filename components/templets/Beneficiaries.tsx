@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import HomeAppBar from '../organism/HomeAppBar';
-import EmptyBeneficiaries from '../organism/EmptyScreen';
+import EmptyBeneficiaries from '../organism/NoItems/NoItem';
 import GridBeneficiaries from '../organism/GridBeneficiaries';
 import ListBeneficiaries from '../organism/ListBeneficiaries';
 import SecBenefAppBar from '../organism/SecBenefAppBar';
