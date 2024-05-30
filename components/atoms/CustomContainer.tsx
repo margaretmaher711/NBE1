@@ -1,14 +1,12 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
-const CustomContainer: React.FC<{title: string; onPressed:any}> = ({
+const CustomContainer: React.FC<{title: string; onPressed: any}> = ({
   title,
-  onPressed=() => navigation.goBack(),
+  onPressed = () => navigation.goBack(),
 }) => {
   return (
     <View style={styles.langContainer}>
-      {/* <Text style={styles.langText}>AR</Text> */}
-      {/* <IoIosArrowBack /> */}
       <TouchableOpacity onPress={onPressed}>
         <Text style={styles.langText}>{title}</Text>
       </TouchableOpacity>

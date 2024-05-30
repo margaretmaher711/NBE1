@@ -5,11 +5,9 @@ import CreditCardAirPayItem from '../../../molecules/AirPay/CreditCardAirPayItem
 
 const CreditCardAirPayList = ({dropZoneValues}) => {
   return (
-
     <FlatList
-      style={{
-        zIndex: 1, // Ensure the cards are above the drop zone
-      }}
+      style={{}}
+      removeClippedSubviews={false}
       horizontal={true}
       data={cardsList}
       showsHorizontalScrollIndicator={false}

@@ -82,18 +82,16 @@ const CreditCardAirPayItem: React.FC<Props> = ({
   };
 
   return (
-    <View
-      style={{
-        flex: 1,
-        zIndex: 2000, // Ensure the cards are above the drop zone
-        backgroundColor: 'red',
-      }}>
+    <View style={{flex: 1, position: 'relative'}}>
       <Animated.View
         style={[
+          styles.card,
           {
             transform: position.getTranslateTransform(),
             opacity: dragging ? 0.8 : 1,
-            zIndex: dragging ? 2 : 1, // Ensure the dragged card is on top
+            
+            // zIndex: dragging ? 3 : 2,
+            // position: 'absolute',
           },
         ]}
         {...panResponder.panHandlers}>
@@ -103,15 +101,13 @@ const CreditCardAirPayItem: React.FC<Props> = ({
           style={styles.creditCardBg}>
           <View style={styles.balnceFingerRowContainer}>
             <Text style={styles.creditCardValText}>{creditCardVal}</Text>
-            <Image
-              source={require(visaIcon)}
-              style={styles.visaIconImg}></Image>
+            <Image source={require(visaIcon)} style={styles.visaIconImg} />
           </View>
           <View style={styles.creditNumRowContainer}>
             <Text style={styles.creditCardText}>**** **** **** 6506</Text>
             <View style={styles.cardnfcContainer}>
-              <Image source={require(cardnfc)}></Image>
-              <Image source={require(cardnfc2)}></Image>
+              <Image source={require(cardnfc)} />
+              <Image source={require(cardnfc2)} />
             </View>
           </View>
           <View style={styles.creditdataContainer}>
@@ -127,6 +123,7 @@ const CreditCardAirPayItem: React.FC<Props> = ({
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   card: {
     backgroundColor: 'transparent',
@@ -165,7 +162,6 @@ const styles = StyleSheet.create({
   creditCardValText: {
     color: '#ffff',
     fontSize: 25,
-
     fontFamily: 'GemunuLibre-Bold',
   },
   creditCardText: {
@@ -175,4 +171,5 @@ const styles = StyleSheet.create({
     fontFamily: 'GemunuLibre-Regular',
   },
 });
+
 export default CreditCardAirPayItem;
