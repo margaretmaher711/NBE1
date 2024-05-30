@@ -18,7 +18,7 @@ const SignupAppBarOrganism = () => {
     <View style={styles.appBar}>
       <View style={styles.langContainer}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Icon name="arrow-back-circle-outline" size={24} color="#fff" />
+          <Icon name="chevron-back-outline" size={24} color="#fff" />
         </TouchableOpacity>
       </View>
       <View style={{flexDirection: 'row'}}>
