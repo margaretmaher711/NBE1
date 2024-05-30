@@ -13,11 +13,19 @@ const DragAndDropCard = () => {
   };
 
   return (
-    <View style={{flex: 1, position: 'relative'}}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'space-between',
+        position: 'relative',
+      }}>
       <View
         style={{
-          flex: 1.5,
+          zIndex: 5,
+          flex: 0.5,
           paddingTop: 30,
+          height: 300,
+          backgroundColor: 'red',
         }}>
         <CreditCardAirPayList dropZoneValues={dropZoneValues} />
       </View>
@@ -44,7 +52,7 @@ const styles = StyleSheet.create({
     zIndex: -1,
     position: 'absolute',
     bottom: 0,
-    flex: 1,
+    flex: 0.5,
     borderWidth: 2,
     borderRadius: 27,
     borderColor: '#007236',

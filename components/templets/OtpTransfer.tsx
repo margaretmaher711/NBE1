@@ -18,6 +18,8 @@ import TitleSubTitle from '../molecules/TitleSubTitle/TitleSubTitle';
 
 function OTPTransfer(): React.JSX.Element {
   const styles = useThemeStyles(getStyles);
+  const [otp, setOtp] = useState('');
+
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <KeyboardAvoidingView
@@ -29,16 +31,24 @@ function OTPTransfer(): React.JSX.Element {
           title="Verification"
           subtitle="Enter 5 digit code we sent to +20 101 131 5412"
         />
-        <CustomOtpInput setOtp={() => null} />
+        <CustomOtpInput setOtp={setOtp} />
         <Text style={styles.subTitle}>Didn’t receive the code?</Text>
         <Text style={styles.title}>Request new one in 00:12</Text>
       </View>
       <View style={styles.lowerCont}>
         <View style={styles.loginContainer}>
-          <CustomButton
-            title="Submit"
-            onPressButton={() => setModalVisible(true)}
-          />
+          {otp.length == 6 ? (
+            <CustomButton
+              title="Submit"
+              onPressButton={() => setModalVisible(true)}
+            />
+          ) : (
+            <CustomButton
+              title="Submit"
+              onPressButton={() => null}
+              opacity={0.7}
+            />
+          )}
         </View>
         <Modal
           animationType="slide"
@@ -48,7 +58,7 @@ function OTPTransfer(): React.JSX.Element {
             setModalVisible(!modalVisible);
           }}>
           <View style={styles.centeredView}>
-          <MissionComplete setModalVisible={setModalVisible}/>
+            <MissionComplete setModalVisible={setModalVisible} />
           </View>
         </Modal>
         <View />

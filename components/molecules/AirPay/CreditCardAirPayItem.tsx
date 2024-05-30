@@ -30,6 +30,7 @@ const CreditCardAirPayItem: React.FC<Props> = ({
 
   // State to track if the card is being dragged
   const [dragging, setDragging] = useState(false);
+  const [droppedInZone, setDroppedInZone] = useState(false);
 
   // Create a pan responder to handle touch events
   const panResponder = useRef(
@@ -54,7 +55,10 @@ const CreditCardAirPayItem: React.FC<Props> = ({
         // Check if the card is dropped in the drop zone
         if (isDropZone(gestureState)) {
           console.log('Dropped in zone');
+          setDroppedInZone(true);
         } else {
+          setDroppedInZone(false);
+
           console.log('Not dropped in zone');
           Animated.spring(position, {
             toValue: {x: 0, y: 0},
@@ -71,7 +75,7 @@ const CreditCardAirPayItem: React.FC<Props> = ({
       return false;
     }
     console.log('Drop Zone Values:', dz);
-    console.log('Gesture Y:', gesture.moveY, 'Gesture X:', gesture.moveX);
+    console.log('position', position);
 
     return (
       gesture.moveY > dz.y &&
@@ -80,18 +84,21 @@ const CreditCardAirPayItem: React.FC<Props> = ({
       gesture.moveX < dz.x + dz.width
     );
   };
+  const dropZonePosition = {x: 8.731124877929688, y: 347.6141052246094};
 
   return (
-    <View style={{flex: 1, position: 'relative'}}>
+    <View style={{ position: 'relative'}}>
       <Animated.View
         style={[
           styles.card,
           {
-            transform: position.getTranslateTransform(),
+            transform: droppedInZone
+              ? [
+                  {translateX: dropZonePosition.x},
+                  {translateY: dropZonePosition.y},
+                ]
+              : position.getTranslateTransform(),
             opacity: dragging ? 0.8 : 1,
-            
-            // zIndex: dragging ? 3 : 2,
-            // position: 'absolute',
           },
         ]}
         {...panResponder.panHandlers}>

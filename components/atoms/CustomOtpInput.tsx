@@ -15,8 +15,8 @@ const CustomOtpInput = ({setOtp}) => {
     },
     pinCodeContainer: {
       marginVertical: 20,
-      borderColor: '#ffff',
-      backgroundColor: themeColors.themeColor,
+      borderColor: themeColors.nativThemeContainerBG,
+      backgroundColor: themeColors.nativThemeContainerBG,
       elevation: 2,
       borderRadius: 10,
     },
