@@ -31,6 +31,22 @@ const CreditCardAirPayItem: React.FC<Props> = ({
   // State to track if the card is being dragged
   const [dragging, setDragging] = useState(false);
   const [droppedInZone, setDroppedInZone] = useState(false);
+  const [previousItemPosition, setPreviousItemPosition] = useState<{
+    x: number;
+    y: number;
+  }>({x: 0, y: 0});
+  const dropZonePosition = {x: 8.731124877929688, y: 347.6141052246094};
+
+  // Function to handle when the item is dropped in the drop zone
+  // setPreviousItemPosition({x: dropZonePosition.x, y: dropZonePosition.y});
+  const handleDrop = () => {
+    Animated.spring(position, {
+      toValue: {x: 0, y: 0},
+      useNativeDriver: false,
+    }).start();
+    console.log('Handling drop logic');
+    console.log('Card Value:', creditCardVal);
+  };
 
   // Create a pan responder to handle touch events
   const panResponder = useRef(
@@ -56,6 +72,7 @@ const CreditCardAirPayItem: React.FC<Props> = ({
         if (isDropZone(gestureState)) {
           console.log('Dropped in zone');
           setDroppedInZone(true);
+          handleDrop(); // Handle the drop logic here
         } else {
           setDroppedInZone(false);
 
@@ -84,10 +101,9 @@ const CreditCardAirPayItem: React.FC<Props> = ({
       gesture.moveX < dz.x + dz.width
     );
   };
-  const dropZonePosition = {x: 8.731124877929688, y: 347.6141052246094};
 
   return (
-    <View style={{ position: 'relative'}}>
+    <View style={{flex: 1, position: 'relative'}}>
       <Animated.View
         style={[
           styles.card,

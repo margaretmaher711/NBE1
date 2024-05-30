@@ -21,11 +21,13 @@ const DragAndDropCard = () => {
       }}>
       <View
         style={{
+          // position: 'absolute',
+          // top: 0,
           zIndex: 5,
-          flex: 0.5,
+          flex: 1,
           paddingTop: 30,
           height: 300,
-          backgroundColor: 'red',
+          // backgroundColor: 'red',
         }}>
         <CreditCardAirPayList dropZoneValues={dropZoneValues} />
       </View>
@@ -49,7 +51,7 @@ function AirPayTemplet({navigation}) {
 
 const styles = StyleSheet.create({
   dropZone: {
-    zIndex: -1,
+    zIndex: -100,
     position: 'absolute',
     bottom: 0,
     flex: 0.5,
